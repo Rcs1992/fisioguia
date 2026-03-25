@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-    <title>VitalSigns Fisio - HUSE | VM + VNI + ABG</title>
+    <title>VitalSigns Fisio - HUSE | VM + VNI + ABG + Mobilização</title>
     <style>
         * {
             margin: 0;
@@ -256,16 +256,50 @@
 <div class="app-container">
     <div class="hospital-header">
         <h1>🩺 FisioVital <span>HUSE</span></h1>
-        <div class="sub">Manual de Bolso</div>
+        <div class="sub">Manual de Ventilação & Gasometria & Mobilização</div>
     </div>
 
-    <!-- BOTÃO 1: Sinais Vitais Ped -->
+    <!-- BOTÃO 1: Sinais Vitais Pediátrico -->
     <button class="accordion-btn" data-target="content-ped"><span>👶 Sinais Vitais (Pediátrico)</span><span class="btn-icon">▼</span></button>
-    <div id="content-ped" class="accordion-content"><div class="content-inner"><div class="section-title">📊 Tabela Pediátrica</div><div class="table-wrapper"><table class="vital-table"><thead><tr><th>Faixa Etária</th><th>FC (bpm)</th><th>FR (irpm)</th><th>PAS (mmHg)</th><th>PAD (mmHg)</th></tr></thead><tbody><tr><td>Recém-nascido (0-28d)</td><td>100–205</td><td>30–60</td><td>67–84</td><td>35–53</td></tr><tr><td>Lactente (1-12m)</td><td>100–180</td><td>25–50</td><td>72–104</td><td>44–65</td></tr><tr><td>Pré-escolar (1-5a)</td><td>80–140</td><td>20–30</td><td>86–106</td><td>54–70</td></tr><tr><td>Escolar (6-12a)</td><td>70–115</td><td>16–22</td><td>94–122</td><td>58–78</td></tr><tr><td>Adolescente (13-18a)</td><td>60–100</td><td>12–20</td><td>100–132</td><td>64–82</td></tr></tbody></table></div><div class="badge-note">💡 SpO₂ ≥95% | Temperatura axilar 36,5–37,5°C. Fonte: pedscases.com</div></div></div>
+    <div id="content-ped" class="accordion-content">
+        <div class="content-inner">
+            <div class="section-title">📊 Tabela Pediátrica</div>
+            <div class="table-wrapper">
+                <table class="vital-table">
+                    <thead><tr><th>Faixa Etária</th><th>FC (bpm)</th><th>FR (irpm)</th><th>PAS (mmHg)</th><th>PAD (mmHg)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Recém-nascido (0-28d)</td><td>100–205</td><td>30–60</td><td>67–84</td><td>35–53</td></tr>
+                        <tr><td>Lactente (1-12m)</td><td>100–180</td><td>25–50</td><td>72–104</td><td>44–65</td></tr>
+                        <tr><td>Pré-escolar (1-5a)</td><td>80–140</td><td>20–30</td><td>86–106</td><td>54–70</td></tr>
+                        <tr><td>Escolar (6-12a)</td><td>70–115</td><td>16–22</td><td>94–122</td><td>58–78</td></tr>
+                        <tr><td>Adolescente (13-18a)</td><td>60–100</td><td>12–20</td><td>100–132</td><td>64–82</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="badge-note">💡 SpO₂ ≥95% | Temperatura axilar 36,5–37,5°C. Fonte: pedscases.com</div>
+        </div>
+    </div>
 
     <!-- BOTÃO 2: Sinais Vitais Adulto -->
     <button class="accordion-btn" data-target="content-adult"><span>🧑 Sinais Vitais (Adulto)</span><span class="btn-icon">▼</span></button>
-    <div id="content-adult" class="accordion-content"><div class="content-inner"><div class="section-title">📋 Valores Adulto</div><div class="table-wrapper"><table class="vital-table"><thead><tr><th>Parâmetro</th><th>Faixa Normal</th><th>Observações</th></tr></thead><tbody><tr><td>Frequência Cardíaca</td><td>60–100 bpm</td><td>Bradicardia < 60 | Taquicardia > 100</td></tr><tr><td>Frequência Respiratória</td><td>12–18 irpm</td><td>>20 taquipneia</td></tr><tr><td>Pressão Arterial</td><td>Sistólica < 120, Diastólica < 80</td><td>Ótima <120/80 mmHg</td></tr><tr><td>Temperatura</td><td>36,5°C – 37,2°C</td><td>Oral/axilar</td></tr><tr><td>SpO₂</td><td>95% – 100%</td><td>ar ambiente</td></tr></tbody></table></div><div class="badge-note">📌 Cleveland Clinic + Diretrizes</div></div></div>
+    <div id="content-adult" class="accordion-content">
+        <div class="content-inner">
+            <div class="section-title">📋 Valores Adulto</div>
+            <div class="table-wrapper">
+                <table class="vital-table">
+                    <thead><tr><th>Parâmetro</th><th>Faixa Normal</th><th>Observações</th></tr></thead>
+                    <tbody>
+                        <tr><td>Frequência Cardíaca</td><td>60–100 bpm</td><td>Bradicardia < 60 | Taquicardia > 100</td></tr>
+                        <tr><td>Frequência Respiratória</td><td>12–18 irpm</td><td>>20 taquipneia</td></tr>
+                        <tr><td>Pressão Arterial</td><td>Sistólica < 120, Diastólica < 80</td><td>Ótima <120/80 mmHg</td></tr>
+                        <tr><td>Temperatura</td><td>36,5°C – 37,2°C</td><td>Oral/axilar</td></tr>
+                        <tr><td>SpO₂</td><td>95% – 100%</td><td>ar ambiente</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="badge-note">📌 Cleveland Clinic + Diretrizes</div>
+        </div>
+    </div>
 
     <!-- BOTÃO 3: VNI -->
     <button class="accordion-btn" data-target="content-vni"><span>💨 Ventilação Não Invasiva (VNI)</span><span class="btn-icon">▼</span></button>
@@ -281,7 +315,7 @@
                         <tr><td>Insuficiência respiratória hipercápnica</td><td class="contra-indicacao">Vômitos incoercíveis, sangramento GI ativo</td></tr>
                         <tr><td>Hipoxemia refratária em imunocomprometidos</td><td class="contra-indicacao absoluta">Deformidade facial / trauma craniofacial grave</td></tr>
                         <tr><td>Desmame de VM / pós-extubação</td><td class="contra-indicacao">Obstrução fixa de vias aéreas superiores</td></tr>
-                        <tr><td></td><td class="contra-indicacao">Pneumotórax não drenado (risco de tensionamento)</td></tr>
+                        <tr><td></td><td class="contra-indicacao">Pneumotórax não drenado</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -297,93 +331,141 @@
                     </tbody>
                 </table>
             </div>
-            <div class="section-title">🛑 Critérios de Interrupção / Falência da VNI</div>
-            <ul style="margin-left: 20px; margin-bottom: 12px;">
-                <li>Piora da gasometria: pH < 7,25 ou PaCO₂ aumentando >10 mmHg em 1h</li>
-                <li>Agitação psicomotora severa / rebaixamento nível consciência</li>
-                <li>Incapacidade de tolerar máscara ou vazamento >30%</li>
-                <li>Instabilidade hemodinâmica (PAS < 90 mmHg, uso de vasopressores)</li>
-                <li>Parada respiratória iminente → IOT imediata</li>
-            </ul>
-            <div class="section-title">📐 Calculadora HACOR (versão atualizada)</div>
+            <div class="section-title">📐 Calculadora HACOR</div>
             <div class="calc-card">
                 <div class="calc-row">
-                    <div class="calc-field"><label>FC (bpm)</label><input type="number" id="hacor_fc" value="95" step="1"></div>
+                    <div class="calc-field"><label>FC (bpm)</label><input type="number" id="hacor_fc" value="95"></div>
                     <div class="calc-field"><label>pH</label><input type="number" id="hacor_ph" value="7.35" step="0.01"></div>
-                    <div class="calc-field"><label>Glasgow (GCS)</label><input type="number" id="hacor_gcs" value="15" step="1"></div>
-                    <div class="calc-field"><label>PaO₂/FiO₂</label><input type="number" id="hacor_pf" value="201" step="5"></div>
-                    <div class="calc-field"><label>FR (irpm)</label><input type="number" id="hacor_fr" value="12" step="1"></div>
+                    <div class="calc-field"><label>Glasgow (GCS)</label><input type="number" id="hacor_gcs" value="15"></div>
+                    <div class="calc-field"><label>PaO₂/FiO₂</label><input type="number" id="hacor_pf" value="201"></div>
+                    <div class="calc-field"><label>FR (irpm)</label><input type="number" id="hacor_fr" value="12"></div>
                 </div>
                 <button class="calc-btn" id="calcHacorBtn">Calcular escore HACOR</button>
-                <div id="hacorResult" class="result-value">Pontuação HACOR: -- (risco de falência)</div>
-                <div class="badge-note">📊 Escore HACOR conforme modelo validado: ≥5 → alto risco de falência da VNI nas primeiras horas. Fonte: European Respiratory Journal, 2024.</div>
+                <div id="hacorResult" class="result-value"></div>
             </div>
         </div>
     </div>
 
-    <!-- BOTÃO 4: Ventilação Mecânica Invasiva (VM) -->
+    <!-- BOTÃO 4: Ventilação Mecânica -->
     <button class="accordion-btn" data-target="content-vm"><span>🫁 Ventilação Mecânica (VM)</span><span class="btn-icon">▼</span></button>
     <div id="content-vm" class="accordion-content">
         <div class="content-inner">
-            <div class="section-title">⚕️ Parâmetros Iniciais (Modo VC/PC)</div>
-            <div class="table-wrapper"><table class="vital-table"><thead><tr><th>Parâmetro</th><th>Configuração Inicial (Base StatPearls 2024)</th><th>Observação</th></tr></thead><tbody>
-                <tr><td>Volume Corrente (VC)</td><td>6-8 mL/kg Peso Ideal</td><td>SDRA: 4-6 mL/kg, manter Platô <30 cmH₂O</td></tr>
-                <tr><td>Frequência Respiratória</td><td>12-16 ipm</td><td>Ajustar para manter pH >7,20 e PaCO₂ alvo</td></tr>
-                <tr><td>PEEP</td><td>5-8 cmH₂O</td><td>Titular conforme tabela ARDSnet ou oxigenação</td></tr>
-                <tr><td>FiO₂</td><td>40-60%</td><td>Manter SpO₂ 88-95% (evitar hiperóxia)</td></tr>
-                <tr><td>Fluxo inspiratório</td><td>40-60 L/min</td><td>Aumentar se I:E >1:3 em doença obstrutiva</td></tr>
-                <tr><td>Pressão de platô</td><td>< 30 cmH₂O</td><td>Obrigatório em proteção pulmonar</td></tr>
-            </tbody></table></div>
-            <div class="section-title">📐 Calculadora de Volume Corrente Ideal (Peso Ideal)</div>
-            <div class="calc-card"><div class="calc-row"><div class="calc-field"><label>Sexo</label><select id="sexo"><option value="M">Masculino</option><option value="F">Feminino</option></select></div><div class="calc-field"><label>Altura (cm)</label><input type="number" id="altura" value="170" step="1"></div><div class="calc-field"><label>mL/kg alvo (proteção)</label><select id="mlPorKg"><option value="6">6 mL/kg (SDRA)</option><option value="7">7 mL/kg</option><option value="8" selected>8 mL/kg (padrão)</option></select></div></div><button class="calc-btn" id="calcVtBtn">Calcular Volume Corrente</button><div id="vtResult" class="result-value">Peso Ideal: -- kg | VC alvo: -- mL</div><div class="badge-note">📌 Fórmula: Homem = 50 + 0.91*(altura-152.4); Mulher = 45.5 + 0.91*(altura-152.4). VC = Peso Ideal × mL/kg.</div></div>
-            <div class="section-title">⚠️ Tabela de Valores Limite / Alertas (Proteção Pulmonar)</div>
-            <div class="table-wrapper"><table class="vital-table"><thead><tr><th>Parâmetro</th><th>Valor Seguro</th><th>Zona de Risco / Intervenção</th></tr></thead><tbody>
-                <tr><td>Pressão de Platô</td><td>< 30 cmH₂O</td><td>> 30 → reduzir VC ou PEEP, risco barotrauma</td></tr>
-                <tr><td>Driving Pressure (ΔP)</td><td>< 14 cmH₂O</td><td>> 15 ↑ mortalidade em SDRA</td></tr>
-                <tr><td>PEEP</td><td>5-15 conforme FiO₂</td><td>PEEP elevada >15 sem monitorização de driving pressure</td></tr>
-                <tr><td>Frequência Respiratória</td><td>< 35 ipm</td><td>> 35 risco de auto-PEEP e hiperinsuflação dinâmica</td></tr>
-                <tr><td>Volume Corrente (protegido)</td><td>4-8 mL/kg Peso Ideal</td><td>> 8 mL/kg associado a lesão pulmonar (exceto neurolesados)</td></tr>
-            </tbody></table></div>
-            <div class="badge-note">🩺 Referências: StatPearls [Internet] 2024; ARDSnet protocol; driving pressure (Amato et al. NEJM 2015).</div>
+            <div class="section-title">⚕️ Parâmetros Iniciais</div>
+            <div class="table-wrapper">
+                <table class="vital-table">
+                    <thead><tr><th>Parâmetro</th><th>Configuração Inicial</th><th>Observação</th></tr></thead>
+                    <tbody>
+                        <tr><td>Volume Corrente (VC)</td><td>6-8 mL/kg Peso Ideal</td><td>SDRA: 4-6 mL/kg, Platô <30</td></tr>
+                        <tr><td>Frequência Respiratória</td><td>12-16 ipm</td><td>Ajustar para pH >7,20</td></tr>
+                        <tr><td>PEEP</td><td>5-8 cmH₂O</td><td>Titular conforme ARDSnet</td></tr>
+                        <tr><td>FiO₂</td><td>40-60%</td><td>SpO₂ 88-95%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="section-title">📐 Calculadora de Volume Corrente Ideal</div>
+            <div class="calc-card">
+                <div class="calc-row">
+                    <div class="calc-field"><label>Sexo</label><select id="sexo"><option value="M">Masculino</option><option value="F">Feminino</option></select></div>
+                    <div class="calc-field"><label>Altura (cm)</label><input type="number" id="altura" value="170"></div>
+                    <div class="calc-field"><label>mL/kg alvo</label><select id="mlPorKg"><option value="6">6 mL/kg (SDRA)</option><option value="7">7 mL/kg</option><option value="8" selected>8 mL/kg</option></select></div>
+                </div>
+                <button class="calc-btn" id="calcVtBtn">Calcular Volume Corrente</button>
+                <div id="vtResult" class="result-value"></div>
+            </div>
         </div>
     </div>
 
-    <!-- BOTÃO 5: GASOMETRIA ARTERIAL (NOVO) -->
+    <!-- BOTÃO 5: Gasometria Arterial -->
     <button class="accordion-btn" data-target="content-abg"><span>🩸 Gasometria Arterial (ABG)</span><span class="btn-icon">▼</span></button>
     <div id="content-abg" class="accordion-content">
         <div class="content-inner">
             <div class="section-title">📋 Valores de Referência (Cleveland Clinic)</div>
             <div class="table-wrapper">
                 <table class="vital-table">
-                    <thead><tr><th>Parâmetro</th><th>Valor Normal (nível do mar)</th><th>Unidade</th></tr></thead>
+                    <thead><tr><th>Parâmetro</th><th>Valor Normal</th><th>Unidade</th></tr></thead>
                     <tbody>
                         <tr><td>pH</td><td>7,35 – 7,45</td><td>-</td></tr>
-                        <tr><td>PaO₂ (Pressão parcial de oxigênio)</td><td>75 – 100</td><td>mmHg</td></tr>
-                        <tr><td>PaCO₂ (Pressão parcial de gás carbônico)</td><td>35 – 45</td><td>mmHg</td></tr>
-                        <tr><td>HCO₃⁻ (Bicarbonato)</td><td>22 – 26</td><td>mEq/L</td></tr>
-                        <tr><td>SatO₂ (Saturação de O₂)</td><td>95 – 100</td><td>%</td></tr>
+                        <tr><td>PaO₂</td><td>75 – 100</td><td>mmHg</td></tr>
+                        <tr><td>PaCO₂</td><td>35 – 45</td><td>mmHg</td></tr>
+                        <tr><td>HCO₃⁻</td><td>22 – 26</td><td>mEq/L</td></tr>
+                        <tr><td>SatO₂</td><td>95 – 100</td><td>%</td></tr>
                     </tbody>
                 </table>
             </div>
-            <div class="badge-note">📌 Valores de referência para adultos em repouso, ao nível do mar. Em altitudes >900m, o PaO₂ esperado é menor.</div>
-
             <div class="section-title">🔍 Análise Rápida da Gasometria</div>
             <div class="calc-card">
                 <div class="calc-row">
                     <div class="calc-field"><label>pH</label><input type="number" id="abg_ph" value="7.40" step="0.01"></div>
-                    <div class="calc-field"><label>PaCO₂ (mmHg)</label><input type="number" id="abg_paco2" value="40" step="1"></div>
-                    <div class="calc-field"><label>HCO₃⁻ (mEq/L)</label><input type="number" id="abg_hco3" value="24" step="1"></div>
-                    <div class="calc-field"><label>PaO₂ (mmHg)</label><input type="number" id="abg_pao2" value="85" step="1"></div>
+                    <div class="calc-field"><label>PaCO₂ (mmHg)</label><input type="number" id="abg_paco2" value="40"></div>
+                    <div class="calc-field"><label>HCO₃⁻ (mEq/L)</label><input type="number" id="abg_hco3" value="24"></div>
+                    <div class="calc-field"><label>PaO₂ (mmHg)</label><input type="number" id="abg_pao2" value="85"></div>
                 </div>
                 <button class="calc-btn" id="calcAbgBtn">Interpretar Gasometria</button>
-                <div id="abgResult" class="result-value">Preencha os valores e clique em interpretar.</div>
-                <div class="abg-analysis" id="abgDetailed"></div>
+                <div id="abgResult" class="result-value"></div>
+                <div id="abgDetailed" class="abg-analysis"></div>
             </div>
-            <div class="badge-note">🩺 Interpretação baseada na abordagem clássica: avaliação do pH (acidemia/alcalemia), componente respiratório (PaCO₂) e metabólico (HCO₃⁻). Oxigenação avaliada pela PaO₂ e SatO₂.</div>
         </div>
     </div>
 
-    <!-- BOTÃO 6: Referências ABNT (sempre último) -->
+    <!-- BOTÃO 6: Mobilização Precoce -->
+    <button class="accordion-btn" data-target="content-mobilizacao"><span>🚶‍♂️ Mobilização Precoce – Critérios de Segurança</span><span class="btn-icon">▼</span></button>
+    <div id="content-mobilizacao" class="accordion-content">
+        <div class="content-inner">
+            <div class="section-title">📋 Critérios Gerais de Segurança (UTI / VM)</div>
+            <div class="table-wrapper">
+                <table class="vital-table">
+                    <thead><tr><th>Categoria</th><th>Critério / Parâmetro</th><th>Valor de Referência / Condição</th></tr></thead>
+                    <tbody>
+                        <tr><td rowspan="5"><strong>Cardiovascular</strong></td><td>Frequência Cardíaca (FC)</td><td>40 – 130 bpm (evitar extremos)</td></tr>
+                        <tr><td>Pressão Arterial Sistólica (PAS)</td><td>90 – 200 mmHg</td></tr>
+                        <tr><td>Pressão Arterial Média (PAM)</td><td>≥ 65 mmHg</td></tr>
+                        <tr><td>Estabilidade hemodinâmica</td><td>Sem necessidade de aumento de droga vasoativa nas últimas 2h</td></tr>
+                        <tr><td>Arritmias / Isquemia miocárdica</td><td>Ausentes no momento da mobilização</td></tr>
+                        <tr><td rowspan="4"><strong>Respiratório</strong></td><td>Frequência Respiratória (FR)</td><td>5 – 40 ipm (ideal < 35)</td></tr>
+                        <tr><td>Saturação periférica (SpO₂)</td><td>> 88% (ideal ≥ 90%)</td></tr>
+                        <tr><td>FiO₂</td><td>< 0,6 (60%)</td></tr>
+                        <tr><td>PEEP</td><td>< 10 cmH₂O</td></tr>
+                        <tr><td rowspan="3"><strong>Neurológico</strong></td><td>Pressão Intracraniana (PIC)</td><td>Não elevada (se monitorizada)</td></tr>
+                        <tr><td>Nível de consciência</td><td>Não comatoso; capaz de seguir comandos simples (ou RASS ≥ -2)</td></tr>
+                        <tr><td>Agitação</td><td>Ausente ou controlada</td></tr>
+                        <tr><td><strong>Ortopédico</strong></td><td>Fraturas instáveis</td><td>Não devem ser mobilizadas sem estabilização prévia</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="badge-note">📚 Fonte: Revisão sistemática PMC5764564 – Safety criteria to start early mobilization in intensive care units. Parâmetros baseados em consenso de 37 estudos.</div>
+
+            <div class="section-title">🩸 Critérios Hematológicos (Pacientes Oncológicos / Onco-Hematológicos)</div>
+            <div class="table-wrapper">
+                <table class="vital-table">
+                    <thead><tr><th>Parâmetro</th><th>Valor / Nível</th><th>Recomendação para Mobilização / Atividade</th></tr></thead>
+                    <tbody>
+                        <tr><td rowspan="5"><strong>Plaquetas (×10⁹/L)</strong></td><td>< 10</td><td class="contra-indicacao">Atividade limitada a deambulação essencial com assistência, exercícios leves em leito; considerar transfusão antes</td></tr>
+                        <tr><td>10 – 20</td><td>Exercícios sem resistência, sem esforço excessivo; deambular se paciente estável</td></tr>
+                        <tr><td>20 – 40</td><td>Resistência leve permitida (banda elástica leve), monitorar sinais de sangramento</td></tr>
+                        <tr><td>40 – 50</td><td>Atividade aeróbica leve (bicicleta estacionária), evitar impacto</td></tr>
+                        <tr><td>> 50</td><td>Atividades moderadas permitidas; > 80 exercícios vigorosos com proteção</td></tr>
+                        <tr><td rowspan="3"><strong>Hemoglobina (g/dL)</strong></td><td>< 7,0</td><td class="contra-indicacao">Contraindicação formal para mobilização; aguardar transfusão ou reavaliar risco-benefício</td></tr>
+                        <tr><td>7,0 – 8,0</td><td>Mobilização com cautela, monitorar sinais de intolerância (dispneia, tontura, fadiga excessiva)</td></tr>
+                        <tr><td>> 8,0</td><td>Mobilização progressiva conforme tolerância, monitorar sintomas</td></tr>
+                        <tr><td rowspan="2"><strong>Neutrófilos (×10⁹/L)</strong></td><td>< 0,5 – 1,0</td><td>Não contraindica mobilização per se. Foco em prevenção de infecção: uso de máscara, higienização, evitar aglomerações, sessões individuais</td></tr>
+                        <tr><td>Febre / Infecção ativa</td><td>Suspender ou reduzir intensidade, manter apenas atividades leves em leito se clinicamente estável</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="badge-note">📚 Fonte: Scoping review PMC12182480 – What are safe hemoglobin, neutrophil and platelet counts for people with hematological malignancies to participate in exercise and activities of daily living. Valores consolidados a partir de 47 estudos e recomendações de especialistas.</div>
+            
+            <div class="section-title">⚠️ Observações Importantes</div>
+            <ul style="margin-left: 20px; margin-bottom: 12px;">
+                <li><strong>Decisão compartilhada:</strong> A mobilização precoce deve ser individualizada, considerando o quadro clínico global, não apenas valores laboratoriais isolados.</li>
+                <li><strong>Monitoramento contínuo:</strong> Avaliar sinais de intolerância (dispneia, queda da SpO₂ > 5%, alteração hemodinâmica, tontura, sangramento ativo).</li>
+                <li><strong>Equipe multiprofissional:</strong> A decisão de mobilizar pacientes com critérios limítrofes deve envolver fisioterapeuta, enfermagem e equipe médica.</li>
+                <li><strong>Contraindicações absolutas adicionais:</strong> Instabilidade de fraturas, hemorragia ativa não controlada, PIC elevada não tratada, instabilidade hemodinâmica refratária.</li>
+            </ul>
+            <div class="badge-note">🩺 A prescrição segura da mobilização precoce é multifatorial e deve ser ajustada diariamente conforme evolução clínica.</div>
+        </div>
+    </div>
+
+    <!-- BOTÃO 7: Referências ABNT -->
     <button class="accordion-btn" data-target="content-refs"><span>📚 Referências Bibliográficas (ABNT)</span><span class="btn-icon">▼</span></button>
     <div id="content-refs" class="accordion-content">
         <div class="content-inner">
@@ -392,6 +474,8 @@
                 <li><strong>PEDSCASES.</strong> Pediatric Vital Signs Reference Chart. <em>PedsCases.com</em>, 2023. Disponível em: <a class="ref-link" href="https://www.pedscases.com/pediatric-vital-signs-reference-chart" target="_blank">https://www.pedscases.com/pediatric-vital-signs-reference-chart</a>. Acesso em: 25 mar. 2026.</li>
                 <li><strong>CLEVELAND CLINIC.</strong> Vital Signs: Understanding What the Body Is Telling You. <em>my.clevelandclinic.org</em>, 2024. Disponível em: <a class="ref-link" href="https://my.clevelandclinic.org/health/articles/10881-vital-signs" target="_blank">https://my.clevelandclinic.org/health/articles/10881-vital-signs</a>. Acesso em: 25 mar. 2026.</li>
                 <li><strong>CLEVELAND CLINIC.</strong> Arterial Blood Gas (ABG): What It Is, Purpose, Procedure & Levels. <em>my.clevelandclinic.org</em>, 2022. Disponível em: <a class="ref-link" href="https://my.clevelandclinic.org/health/diagnostics/22409-arterial-blood-gas-abg" target="_blank">https://my.clevelandclinic.org/health/diagnostics/22409-arterial-blood-gas-abg</a>. Acesso em: 25 mar. 2026.</li>
+                <li><strong>HOUSTON, J.L. et al.</strong> What are safe hemoglobin, neutrophil and platelet counts for people with hematological malignancies to participate in exercise and activities of daily living: a scoping review. <em>Supportive Care in Cancer</em>, v. 33, n. 7, p. 605, 2025. DOI: 10.1007/s00520-025-09612-5. Disponível em: <a class="ref-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12182480/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC12182480/</a>. Acesso em: 25 mar. 2026.</li>
+                <li><strong>LIMA, L.O. et al.</strong> Safety criteria to start early mobilization in intensive care units. Systematic review. <em>Revista Brasileira de Terapia Intensiva</em>, v. 29, n. 4, p. 509–519, 2017. Disponível em: <a class="ref-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5764564/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC5764564/</a>. Acesso em: 25 mar. 2026.</li>
                 <li><strong>NAVAS, A. et al.</strong> Noninvasive ventilation in acute respiratory failure. <em>European Respiratory Journal</em>, 2024; 64(5): 2400396. Disponível em: <a class="ref-link" href="https://publications.ersnet.org/content/erj/64/5/2400396" target="_blank">https://publications.ersnet.org/content/erj/64/5/2400396</a>. Acesso em: 25 mar. 2026.</li>
                 <li><strong>HICKEY, S.M.; SANKARI, A.; GIWA, A.O.</strong> Mechanical Ventilation. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2024. Disponível em: <a class="ref-link" href="https://www.ncbi.nlm.nih.gov/books/NBK539742/" target="_blank">https://www.ncbi.nlm.nih.gov/books/NBK539742/</a>. Acesso em: 25 mar. 2026.</li>
             </ul>
@@ -399,7 +483,7 @@
         </div>
     </div>
 
-    <div class="footnote">🏥 App para fisioterapeutas e estagiários HUSE | Dados baseados em evidências atuais | Criado por Rodrigo Cavalcante.</div>
+    <div class="footnote">🏥 App para fisioterapeutas e estagiários HUSE | Dados baseados em evidências atualizadas | VNI + VM + ABG + Mobilização Precoce com critérios de segurança.</div>
 </div>
 
 <script>
@@ -447,7 +531,7 @@
         closeAllContents();
         buttons.forEach(btn => btn.addEventListener('click', handleButtonClick));
 
-        // HACOR calculadora
+        // HACOR
         function calcularHACOR() {
             let fc = parseFloat(document.getElementById('hacor_fc').value);
             let ph = parseFloat(document.getElementById('hacor_ph').value);
@@ -472,13 +556,13 @@
             else if (fr >= 41 && fr <= 45) score += 3;
             else if (fr >= 36 && fr <= 40) score += 2;
             else if (fr >= 31 && fr <= 35) score += 1;
-            let risco = score >= 5 ? "⚠️ ALTO RISCO de falência da VNI (escore ≥5) – considerar intubação precoce" : "✅ BAIXO RISCO (<5) – manter monitorização rigorosa, VNI provavelmente eficaz";
+            let risco = score >= 5 ? "⚠️ ALTO RISCO de falência da VNI (escore ≥5) – considerar intubação precoce" : "✅ BAIXO RISCO (<5) – manter monitorização rigorosa";
             document.getElementById('hacorResult').innerHTML = `Escore HACOR: ${score} pontos — ${risco}`;
         }
         document.getElementById('calcHacorBtn')?.addEventListener('click', calcularHACOR);
         calcularHACOR();
 
-        // Calculadora Volume Corrente
+        // Volume Corrente
         function calcularVt() {
             let sexo = document.getElementById('sexo').value;
             let alturaCm = parseFloat(document.getElementById('altura').value);
@@ -492,89 +576,42 @@
         document.getElementById('calcVtBtn')?.addEventListener('click', calcularVt);
         calcularVt();
 
-        // INTERPRETAÇÃO DA GASOMETRIA
+        // ABG
         function interpretarABG() {
             let pH = parseFloat(document.getElementById('abg_ph').value);
             let pCO2 = parseFloat(document.getElementById('abg_paco2').value);
             let hco3 = parseFloat(document.getElementById('abg_hco3').value);
             let paO2 = parseFloat(document.getElementById('abg_pao2').value);
-            
-            if (isNaN(pH) || isNaN(pCO2) || isNaN(hco3) || isNaN(paO2)) {
-                document.getElementById('abgResult').innerHTML = "❌ Preencha todos os campos numéricos corretamente.";
-                document.getElementById('abgDetailed').innerHTML = "";
-                return;
-            }
-
-            // 1. Avaliação da oxigenação
-            let oxigenacao = "";
-            if (paO2 >= 75) oxigenacao = "✅ PaO₂ normal (>75 mmHg).";
-            else if (paO2 >= 60) oxigenacao = "⚠️ Hipoxemia leve (PaO₂ 60-74 mmHg).";
-            else if (paO2 >= 40) oxigenacao = "⚠️⚠️ Hipoxemia moderada (PaO₂ 40-59 mmHg).";
-            else oxigenacao = "🔴 Hipoxemia grave (PaO₂ < 40 mmHg). Risco de falência respiratória.";
-
-            // 2. Distúrbio ácido-base
-            let acidBase = "";
-            let compensacao = "";
-            let disturbio = "";
-            
-            // Acidemia ou Alcalemia?
+            if (isNaN(pH) || isNaN(pCO2) || isNaN(hco3) || isNaN(paO2)) return;
+            let oxigenacao = paO2 >= 75 ? "✅ PaO₂ normal (>75 mmHg)" : (paO2 >= 60 ? "⚠️ Hipoxemia leve" : (paO2 >= 40 ? "⚠️⚠️ Hipoxemia moderada" : "🔴 Hipoxemia grave"));
+            let acidBase = "", disturbio = "", compensacao = "";
             if (pH < 7.35) {
-                acidBase = "ACIDEMIA (pH < 7,35)";
-                // Distúrbio primário: comparar PaCO2 e HCO3
-                if (pCO2 > 45 && hco3 >= 22) {
-                    disturbio = "Acidose respiratória aguda (PaCO₂ elevada).";
-                    compensacao = "Compensação metabólica ausente/inicial (HCO₃⁻ normal).";
-                    if (hco3 > 26) compensacao = "Compensação metabólica parcial (HCO₃⁻ elevado, crônico).";
-                } else if (hco3 < 22 && pCO2 <= 40) {
-                    disturbio = "Acidose metabólica (HCO₃⁻ reduzido).";
-                    compensacao = (pCO2 < 35) ? "Compensação respiratória presente (PaCO₂ baixa)." : "Sem compensação respiratória adequada.";
-                } else if (pCO2 > 45 && hco3 < 22) {
-                    disturbio = "Distúrbio misto: acidose respiratória + acidose metabólica.";
-                    compensacao = "pH gravemente reduzido, avaliar causas associadas.";
-                } else if (hco3 > 26 && pCO2 > 45) {
-                    disturbio = "Acidose respiratória crônica com compensação metabólica (HCO₃⁻ elevado).";
-                    compensacao = "Distúrbio compensado (pH próximo ao normal se crônico).";
-                } else disturbio = "Acidose não classificada, revisar valores.";
-            } 
-            else if (pH > 7.45) {
-                acidBase = "ALCALEMIA (pH > 7,45)";
-                if (pCO2 < 35 && hco3 <= 26) {
-                    disturbio = "Alcalose respiratória aguda (PaCO₂ baixa).";
-                    compensacao = "HCO₃⁻ normal ou levemente reduzido (compensação aguda).";
-                } else if (hco3 > 26 && pCO2 >= 40) {
-                    disturbio = "Alcalose metabólica (HCO₃⁻ elevado).";
-                    compensacao = (pCO2 > 45) ? "Compensação respiratória (retenção de CO₂)." : "Sem compensação adequada.";
-                } else if (pCO2 < 35 && hco3 > 26) {
-                    disturbio = "Alcalose mista: respiratória + metabólica.";
-                    compensacao = "pH muito elevado, risco de tetania/convulsões.";
-                } else disturbio = "Alcalose não classificada.";
-            } 
-            else {
-                acidBase = "pH dentro da faixa normal (7,35-7,45).";
-                if (pCO2 > 45 && hco3 > 26) {
-                    disturbio = "Possível acidose respiratória crônica compensada.";
-                    compensacao = "Distúrbio compensado, avaliar história clínica.";
-                } else if (pCO2 < 35 && hco3 < 22) {
-                    disturbio = "Possível alcalose respiratória crônica compensada.";
-                    compensacao = "Distúrbio compensado, monitorar gasometria seriada.";
-                } else if (hco3 < 22 && pCO2 < 35) {
-                    disturbio = "Acidose metabólica com compensação respiratória total (pH normalizado).";
-                    compensacao = "Resposta adequada, avaliar ânion gap.";
-                } else if (hco3 > 26 && pCO2 > 45) {
-                    disturbio = "Alcalose metabólica com compensação respiratória total.";
-                    compensacao = "Compensação adequada.";
-                } else {
-                    disturbio = "Gasometria normal ou distúrbios compensados sem alteração do pH.";
-                    compensacao = "Considere contexto clínico e ânion gap se suspeita de acidose metabólica.";
-                }
+                acidBase = "ACIDEMIA";
+                if (pCO2 > 45 && hco3 >= 22) { disturbio = "Acidose respiratória aguda"; compensacao = "Compensação metabólica ausente/inicial"; }
+                else if (hco3 < 22 && pCO2 <= 40) { disturbio = "Acidose metabólica"; compensacao = (pCO2 < 35) ? "Compensação respiratória presente" : "Sem compensação"; }
+                else if (pCO2 > 45 && hco3 < 22) { disturbio = "Distúrbio misto: acidose respiratória + metabólica"; compensacao = "pH gravemente reduzido"; }
+                else if (hco3 > 26 && pCO2 > 45) { disturbio = "Acidose respiratória crônica compensada"; compensacao = "Compensação metabólica"; }
+                else disturbio = "Acidose não classificada";
+            } else if (pH > 7.45) {
+                acidBase = "ALCALEMIA";
+                if (pCO2 < 35 && hco3 <= 26) { disturbio = "Alcalose respiratória aguda"; compensacao = "HCO₃⁻ normal ou levemente reduzido"; }
+                else if (hco3 > 26 && pCO2 >= 40) { disturbio = "Alcalose metabólica"; compensacao = (pCO2 > 45) ? "Compensação respiratória" : "Sem compensação"; }
+                else if (pCO2 < 35 && hco3 > 26) { disturbio = "Alcalose mista"; compensacao = "pH muito elevado"; }
+                else disturbio = "Alcalose não classificada";
+            } else {
+                acidBase = "pH normal (7,35-7,45)";
+                if (pCO2 > 45 && hco3 > 26) disturbio = "Possível acidose respiratória crônica compensada";
+                else if (pCO2 < 35 && hco3 < 22) disturbio = "Possível alcalose respiratória crônica compensada";
+                else if (hco3 < 22 && pCO2 < 35) disturbio = "Acidose metabólica com compensação total";
+                else if (hco3 > 26 && pCO2 > 45) disturbio = "Alcalose metabólica com compensação total";
+                else disturbio = "Gasometria normal ou distúrbios compensados";
+                compensacao = "Avaliar contexto clínico";
             }
-            
-            document.getElementById('abgResult').innerHTML = `🔬 Análise: ${acidBase}<br>📌 ${disturbio}<br>🔄 ${compensacao}<br>🫁 ${oxigenacao}`;
-            document.getElementById('abgDetailed').innerHTML = `<strong>💡 Interpretação adicional:</strong> pH = ${pH.toFixed(2)} | PaCO₂ = ${pCO2} mmHg | HCO₃⁻ = ${hco3} mEq/L | PaO₂ = ${paO2} mmHg.<br>➡️ Recomendação: correlacionar com quadro clínico e eletrólitos. Em acidose metabólica, calcule o ânion gap (Na - Cl - HCO₃).`;
+            document.getElementById('abgResult').innerHTML = `🔬 ${acidBase}<br>📌 ${disturbio}<br>🔄 ${compensacao}<br>🫁 ${oxigenacao}`;
+            document.getElementById('abgDetailed').innerHTML = `<strong>💡 Valores:</strong> pH=${pH.toFixed(2)} | PaCO₂=${pCO2} | HCO₃=${hco3} | PaO₂=${paO2}<br>➡️ Correlacionar com quadro clínico.`;
         }
-        
         document.getElementById('calcAbgBtn')?.addEventListener('click', interpretarABG);
-        interpretarABG(); // inicializa com valores padrão
+        interpretarABG();
     })();
 </script>
 </body>
