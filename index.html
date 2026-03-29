@@ -285,6 +285,27 @@
             .step-image { width: 90px; }
             .step-text { font-size: 0.8rem; }
         }
+
+		/* Barra de pesquisa */
+.search-container {
+    margin-bottom: 20px;
+    padding: 0 4px;
+}
+#searchInput {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+    border: 1px solid #b9cef0;
+    border-radius: 40px;
+    background: white;
+    outline: none;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+#searchInput:focus {
+    border-color: #0088cc;
+    box-shadow: 0 0 0 2px rgba(0,136,204,0.2);
+}
     </style>
 </head>
 <body>
@@ -293,6 +314,11 @@
         <h1>🩺 FisioVital <span>HUSE</span></h1>
         <div class="sub">Manual de Atribuições, Ventilação & Mobilização</div>
     </div>
+
+	<!-- CAMPO DE PESQUISA -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="🔍 Pesquisar botões... (ex: mobilização, VNI, gasometria)">
+</div>
 
     <!-- BOTÃO 1: ATRIBUIÇÕES DO FISIOTERAPEUTA -->
     <button class="accordion-btn" data-target="content-atribuicoes"><span>📜 Atribuições do Fisioterapeuta – Âmbito Hospitalar</span><span class="btn-icon">▼</span></button>
@@ -353,7 +379,94 @@
         </div>
     </div>
 
-    <!-- BOTÃO 2: Sinais Vitais Pediátrico -->
+   <!-- BOTÃO: RECOMENDAÇÕES BASEADAS EM DIRETRIZES -->
+<button class="accordion-btn" data-target="content-recomendacoes">
+    <span>📋 Recomendações Baseadas em Diretrizes – Fisioterapia Hospitalar</span>
+    <span class="btn-icon">▼</span>
+</button>
+<div id="content-recomendacoes" class="accordion-content">
+    <div class="content-inner">
+        <div class="section-title">📌 Síntese de 32 Diretrizes Clínicas (Plater et al., 2024)</div>
+        <div class="badge-note">📄 As 27 declarações abaixo representam uma síntese das melhores recomendações baseadas em evidências para a fisioterapia em ambiente hospitalar (pacientes internados). Foram organizadas por áreas de atuação e incluem um nível de confiança baseado no número de diretrizes que as suportam e na qualidade da evidência.</div>
+
+        <!-- CARDIORRESPIRATÓRIO -->
+        <div class="section-title">🫁 Cardiorrespiratório (12 diretrizes)</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><th>#</th><th>Recomendação</th><th>Confiança</th></thead>
+                <tbody>
+                    <tr><td>1</td><td>Exercícios de baixa intensidade devem ser oferecidos a pacientes com doença pulmonar crônica durante a internação, com orientações para progressão ou acompanhamento após alta.</td><td>Baixa</td></tr>
+                    <tr><td>2</td><td>Exercícios de baixa intensidade devem ser oferecidos a pacientes com doença cardíaca durante a internação, com orientações para progressão ou acompanhamento.</td><td>Forte</td></tr>
+                    <tr><td>3</td><td>Pacientes com risco de retenção de secreções devem ser avaliados por um fisioterapeuta.</td><td>Moderada</td></tr>
+                    <tr><td>4</td><td>Técnicas de desobstrução brônquica devem ser fornecidas de acordo com a preferência do paciente.</td><td>Moderada</td></tr>
+                    <tr><td>5</td><td>O tosse assistida (cough assist) deve estar disponível para pacientes com pico de fluxo expiratório < 270 L/min que não conseguem eliminar secreções.</td><td>Moderada</td></tr>
+                    <tr><td>6</td><td>Pacientes ventilados mecanicamente devem iniciar um programa de mobilização precoce após 24 horas de estabilidade.</td><td>Moderada</td></tr>
+                    <tr><td>7</td><td>Pacientes de alto risco ou criticamente enfermos devem ser monitorados continuamente durante o exercício.</td><td>Forte</td></tr>
+                    <tr><td>8</td><td>Massagem, compressas frias e técnicas de relaxamento podem ser usadas para reduzir a dor procedimental.</td><td>Baixa</td></tr>
+                    <tr><td>9</td><td>Otimização do sono, comunicação e reorientação devem ser usadas para reduzir o delirium na UTI.</td><td>Baixa</td></tr>
+                    <tr><td>10</td><td>Incluir avaliação subjetiva e objetiva para trombose venosa profunda (TVP) na avaliação de pacientes imobilizados.</td><td>Moderada</td></tr>
+                </tbody>
+        </div>
+
+        <!-- MAIORES DE 65 ANOS -->
+        <div class="section-title">👴 Maiores de 65 anos (4 diretrizes)</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><th>#</th><th>Recomendação</th><th>Confiança</th></thead>
+                <tbody>
+                    <tr><td>11</td><td>Todo paciente internado com mais de 65 anos deve ser avaliado quanto à fragilidade e risco de quedas (incluindo avaliação de equilíbrio e mobilidade) e registrar se o paciente faz uso de anticoagulantes.</td><td>Baixa</td></tr>
+                    <tr><td>12</td><td>Todo paciente com risco de quedas acima de 65 anos deve receber um programa de atividade física durante a internação e ser encaminhado para acompanhamento se o risco persistir.</td><td>Forte</td></tr>
+                </tbody>
+        </div>
+
+        <!-- CIRÚRGICO -->
+        <div class="section-title">🔪 Cirúrgico (9 diretrizes)</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><th>#</th><th>Recomendação</th><th>Confiança</th></thead>
+                <tbody>
+                    <tr><td>13</td><td>Fisioterapia pré-operatória deve estar disponível para todos os pacientes submetidos a cirurgias eletivas que impactarão sua mobilidade ou função cardiorrespiratória.</td><td>Moderada</td></tr>
+                    <tr><td>14</td><td>A fisioterapia pré-operatória deve incluir avaliação de risco, educação e preparação para o período pós-operatório.</td><td>Baixa</td></tr>
+                    <tr><td>15</td><td>A fisioterapia pós-operatória deve ser iniciada no 1º dia após a cirurgia.</td><td>Forte</td></tr>
+                    <tr><td>16</td><td>A fisioterapia pós-operatória deve focar no alcance de metas funcionais, maximizando a função, mobilizando e fornecendo exercícios gerais e específicos para a cirurgia realizada.</td><td>Moderada</td></tr>
+                    <tr><td>17</td><td>Para amputados, o tratamento deve incluir terapia compressiva e descarga precoce com prótese (pilar/PPAMaid).</td><td>Baixa</td></tr>
+                    <tr><td>18</td><td>Para pacientes com fratura de quadril, é necessária uma avaliação completa da mobilidade prévia e atual, capacidade de exercício, equilíbrio, fatores contribuintes e risco de quedas.</td><td>Baixa</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- NEUROLÓGICO / REABILITAÇÃO -->
+        <div class="section-title">🧠 Neurológico / Reabilitação (6 diretrizes)</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><th>#</th><th>Recomendação</th><th>Confiança</th></thead>
+                <tbody>
+                    <tr><td>19</td><td>Pacientes internados com condições neurológicas/de reabilitação devem ser avaliados por um fisioterapeuta e a intervenção iniciada dentro de 24–48 horas do início ou assim que o paciente estiver clinicamente estável.</td><td>Forte</td></tr>
+                    <tr><td>20</td><td>A rotina diária do paciente em reabilitação deve ser organizada para permitir 3 horas diárias de reabilitação ativa conforme tolerado (fisioterapia equilibrada com outras intervenções).</td><td>Baixa</td></tr>
+                    <tr><td>21</td><td>Pacientes em reabilitação devem ser avaliados usando medidas de desfecho padronizadas e testes específicos para anormalidades de marcha, equilíbrio, fraqueza e função, e monitorados para desenvolvimento de complicações (espasticidade, contratura, negligência, dor, subluxação).</td><td>Moderada</td></tr>
+                    <tr><td>22</td><td>Para pacientes neurológicos/em reabilitação, o treinamento funcional repetitivo orientado a metas deve ser o foco do tratamento. Outros recursos e terapias adjuvantes podem ser usados para facilitar o treinamento/reabilitação.</td><td>Forte</td></tr>
+                    <tr><td>23</td><td>Para pacientes neurológicos/em reabilitação, a aptidão cardiovascular deve ser avaliada, e a reabilitação deve incluir exercícios de grandes grupos musculares de baixa intensidade, visando 20 minutos, 3 vezes por semana.</td><td>Moderada</td></tr>
+                </tbody>
+        </div>
+
+        <!-- PLANEJAMENTO DE ALTA E OUTROS -->
+        <div class="section-title">📤 Planejamento de Alta e Outros (1 diretriz + recomendações de outras temáticas)</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><th>#</th><th>Recomendação</th><th>Confiança</th></thead>
+                <tbody>
+                    <tr><td>24</td><td>Os recursos de adaptação devem ser cuidadosamente considerados junto ao paciente e à família/cuidador quanto à sua capacidade de proporcionar independência a curto prazo, considerando o potencial custo de dependência/compensação a longo prazo.</td><td>Moderada</td></tr>
+                    <tr><td>25</td><td>Pacientes, familiares e cuidadores devem receber educação e suporte para apoiar o estabelecimento de metas terapêuticas.</td><td>Moderada</td></tr>
+                    <tr><td>26</td><td>O planejamento da alta para pacientes com necessidades sociais, de reabilitação ou de equipamentos contínuas deve começar a partir da admissão.</td><td>Moderada</td></tr>
+                    <tr><td>27</td><td>O planejamento da alta/transferência de cuidado deve incluir avaliação ambiental, educação do paciente/cuidador/família, fornecimento de equipamentos e organização de acompanhamento alinhado com os objetivos do paciente.</td><td>Forte</td></tr>
+                </tbody>
+            </div>
+
+        <div class="badge-note">📌 <strong>Observações:</strong> A confiança das recomendações foi classificada com base no número de diretrizes que as suportam e na qualidade da evidência atribuída pelos grupos elaboradores. Recomendações com confiança "forte" são suportadas por múltiplas diretrizes de alta qualidade; recomendações com confiança "baixa" podem ser suportadas por poucas diretrizes ou evidência de qualidade limitada. Detalhes sobre a metodologia e diretrizes de origem estão disponíveis no artigo original.</div>
+    </div>
+</div>
+	
+	<!-- BOTÃO 2: Sinais Vitais Pediátrico -->
     <button class="accordion-btn" data-target="content-ped"><span>👶 Sinais Vitais (Pediátrico)</span><span class="btn-icon">▼</span></button>
     <div id="content-ped" class="accordion-content"><div class="content-inner"><div class="section-title">📊 Tabela Pediátrica</div><div class="table-wrapper"><table class="vital-table"><thead><th>Faixa Etária</th><th>FC (bpm)</th><th>FR (irpm)</th><th>PAS (mmHg)</th><th>PAD (mmHg)</th></tr></thead><tbody><tr><td>Recém-nascido (0-28d)</td><td>100–205</td><td>30–60</td><td>67–84</td><td>35–53</td></tr><tr><td>Lactente (1-12m)</td><td>100–180</td><td>25–50</td><td>72–104</td><td>44–65</td></tr><tr><td>Pré-escolar (1-5a)</td><td>80–140</td><td>20–30</td><td>86–106</td><td>54–70</td></tr><tr><td>Escolar (6-12a)</td><td>70–115</td><td>16–22</td><td>94–122</td><td>58–78</td></tr><tr><td>Adolescente (13-18a)</td><td>60–100</td><td>12–20</td><td>100–132</td><td>64–82</td></tr></tbody></table></div><div class="badge-note">💡 SpO₂ ≥95% | Temperatura axilar 36,5–37,5°C. Fonte: <a href="https://www.pedscases.com/pediatric-vital-signs-reference-chart" target="_blank">PedsCases.com</a></div></div></div>
 
@@ -361,7 +474,95 @@
     <button class="accordion-btn" data-target="content-adult"><span>🧑 Sinais Vitais (Adulto)</span><span class="btn-icon">▼</span></button>
     <div id="content-adult" class="accordion-content"><div class="content-inner"><div class="section-title">📋 Valores Adulto</div><div class="table-wrapper"><table class="vital-table"><thead><th>Parâmetro</th><th>Faixa Normal</th><th>Observações</th></tr></thead><tbody><tr><td>Frequência Cardíaca</td><td>60–100 bpm</td><td>Bradicardia < 60 | Taquicardia > 100</td></tr><tr><td>Frequência Respiratória</td><td>12–18 irpm</td><td>>20 taquipneia</td></tr><tr><td>Pressão Arterial</td><td>Sistólica < 120, Diastólica < 80</td><td>Ótima <120/80 mmHg</td></tr><tr><td>Temperatura</td><td>36,5°C – 37,2°C</td><td>Oral/axilar</td></tr><tr><td>SpO₂</td><td>95% – 100%</td><td>ar ambiente</td></tr></tbody></table></div><div class="badge-note">📌 Fonte: <a href="https://my.clevelandclinic.org/health/articles/10881-vital-signs" target="_blank">Cleveland Clinic</a></div></div></div>
 
-    <!-- BOTÃO 4: VNI -->
+    <!-- BOTÃO: DROGAS VASOATIVAS E INFUSÕES COMUNS -->
+<button class="accordion-btn" data-target="content-drogas">
+    <span>💉 Drogas Vasoativas e Infusões Comuns (UTI)</span>
+    <span class="btn-icon">▼</span>
+</button>
+<div id="content-drogas" class="accordion-content">
+    <div class="content-inner">
+        <div class="section-title">📌 Vasopressores e Inotrópicos</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead>
+                    <tr>
+                        <th>Fármaco</th>
+                        <th>Dose usual</th>
+                        <th>Receptores / Ação</th>
+                        <th>Indicações principais</th>
+                        <th>Observações / Efeitos adversos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Norepinefrina (Levophed®)</strong></td><td>1 – 100 mcg/min</td><td>α1 > β1</td><td>Choque séptico (1ª linha)</td><td>Isquemia periférica, necrose cutânea</td></tr>
+                    <tr><td><strong>Fenilefrina (Neosynephrine®)</strong></td><td>Bolus: 0,05‑0,5 mg a cada 10‑15 min<br>Infusão: 40‑360 mcg/min</td><td>α1</td><td>Hipotensão periprocedimento, taquiarritmias, estenose aórtica crítica</td><td>Bradicardia reflexa, isquemia periférica</td></tr>
+                    <tr><td><strong>Epinefrina</strong></td><td>1 – 40 mcg/min</td><td>α1 = β1 = β2</td><td>Pós-PCR, anafilaxia, choque séptico grave, choque cardiogênico</td><td>Taquiarritmias, isquemia periférica</td></tr>
+                    <tr><td><strong>Vasopressina</strong></td><td>0,04 U/min (sem titulação usual)</td><td>V1, V2, V3</td><td>Choque séptico (2ª linha), insuficiência cardíaca direita</td><td>Hiponatremia, bradicardia</td></tr>
+                    <tr><td><strong>Dopamina</strong></td><td>2 – 20 mcg/kg/min</td><td>Dopaminérgico (1‑5) > β1 (5‑10) > α1 (>10)</td><td>Hipotensão, choque cardiogênico</td><td>Taquiarritmias, isquemia periférica</td></tr>
+                    <tr><td><strong>Dobutamina</strong></td><td>2,5 – 20 mcg/kg/min</td><td>β1 >>> β2</td><td>Choque cardiogênico (aumenta contratilidade)</td><td>Vasodilatação → hipotensão, taquicardia, taquifilaxia</td></tr>
+                    <tr><td><strong>Milrinona</strong></td><td>0,375 – 0,75 mcg/kg/min</td><td>Inibidor da PDE-3</td><td>Choque cardiogênico (vasodilatador + inotrópico)</td><td>Hipotensão, clearance renal (ajustar na IR)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-title">💊 Sedativos e Ansiolíticos</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><tr><th>Fármaco</th><th>Dose</th><th>Classe / Mecanismo</th><th>Metabolismo</th><th>Efeitos adversos / Observações</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Propofol</strong></td><td>5 – 150 mcg/kg/min</td><td>Agonista GABA</td><td>Hepático e renal (menor)</td><td>Hipotensão grave, bradicardia, hipertrigliceridemia, síndrome da infusão do propofol (rara). Monitorar triglicérides e CK</td></tr>
+                    <tr><td><strong>Dexmedetomidina (Precedex®)</strong></td><td>0,1 – 1,5 mcg/kg/h</td><td>Agonista α2 central</td><td>Hepático</td><td>Hipotensão, bradicardia</td></tr>
+                    <tr><td><strong>Midazolam (Dormonid®)</strong></td><td>Bolus: 0,5‑5 mg<br>Infusão: 0,25‑5 mg/h (sem dose máxima)</td><td>Benzodiazepínico</td><td>Hepático e renal</td><td>Hipotensão, risco de abstinência se uso prolongado</td></tr>
+                    <tr><td><strong>Lorazepam (Lorax®)</strong></td><td>Bolus: 0,5‑10 mg<br>Infusão: 0,5‑5 mg/h</td><td>Benzodiazepínico</td><td>Hepático</td><td>Hipotensão; veículo propilenoglicol → acidose metabólica com ânion gap elevado</td></tr>
+                    <tr><td><strong>Cetamina (Ketalar®)</strong></td><td>Bolus: 1‑2 mg/kg<br>Infusão: iniciar 0,2 mg/kg/h, titular 0,1 a cada 15 min</td><td>Antagonista NMDA</td><td>Hepático</td><td>Delírio, alucinações (cuidado em psiquiátricos), hipertensão, taquicardia. Pré-tratar com glicopirrolato 0,4 mg IV para evitar sialorreia</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-title">💊 Analgésicos</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><tr><th>Fármaco</th><th>Dose</th><th>Metabolismo</th><th>Efeitos adversos / Observações</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Fentanil</strong></td><td>Bolus: 25‑100 mcg<br>Infusão: 25‑400 mcg/h</td><td>Hepático</td><td>Hipotensão, síndrome serotoninérgica, rigidez torácica (altas doses)</td></tr>
+                    <tr><td><strong>Morfina</strong></td><td>Bolus: 1‑5 mg a cada 1‑2h se necessário<br>Infusão: 1‑5 mg/h</td><td>Hepático e renal</td><td>Hipotensão acentuada, prurido, constipação; evitar em IR</td></tr>
+                    <tr><td><strong>Hidromorfona (Dilaudid®)</strong></td><td>Bolus: 0,25‑1 mg a cada 1‑2h<br>Infusão: 0,5‑3 mg/h</td><td>Hepático</td><td>Hipotensão, depressão respiratória, prurido</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-title">💊 Antiarrítmicos</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><tr><th>Fármaco</th><th>Dose</th><th>Indicações principais</th><th>Efeitos adversos / Observações</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Adenosina</strong></td><td>6 – 12 mg IV em bolus rápido (flush) – pode repetir</td><td>TVPS (taquicardia supraventricular paroxística)</td><td>Bloqueio AV transitório; meia‑vida de 10 segundos. Monitorização contínua obrigatória</td></tr>
+                    <tr><td><strong>Amiodarona</strong></td><td>ACLS: 300 mg IV em bolus<br>Não emergencial: 150 mg em 10 min → 0,5 mg/min</td><td>TV/FV, FA</td><td>Menos hipotensão que outros. Toxicidade pulmonar, ocular, tireoidiana no uso crônico. Cuidado se anticoagulação inadequada</td></tr>
+                    <tr><td><strong>Diltiazem</strong></td><td>Bolus: 10‑20 mg a cada 15 min (x2)<br>Infusão: 5‑15 mg/h</td><td>FA, Flutter, TVPS</td><td>Bradicardia, hipotensão. Evitar em IC com fração de ejeção reduzida (HFrEF)</td></tr>
+                    <tr><td><strong>Lidocaína</strong></td><td>ACLS: 1 mg/kg<br>Infusão: 1‑4 mg/min</td><td>TV</td><td>Bradicardia, bloqueio cardíaco. Seguro em HFrEF. Monitorizar níveis se uso >24h</td></tr>
+                    <tr><td><strong>Procainamida</strong></td><td>15 mg/kg em 30 min → 1‑6 mg/min</td><td>TV, FA refratária</td><td>Bradicardia, hipotensão, lúpus induzido por droga, citopenias</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-title">💊 Anti‑hipertensivos</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><tr><th>Fármaco</th><th>Classe / Mecanismo</th><th>Dose</th><th>Indicações principais</th><th>Efeitos adversos / Observações</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Esmolol</strong></td><td>Betabloqueador (β1 seletivo)</td><td>Bolus: 1 mg/kg em 30s<br>Infusão: 50‑300 mcg/kg/min (máx 300)</td><td>Dissecção aórtica, emergência hipertensiva</td><td>Bradicardia, hipotensão. Cautela em HFrEF</td></tr>
+                    <tr><td><strong>Nicardipina</strong></td><td>Bloqueador de canal de cálcio (CCB)</td><td>Infusão: 5‑15 mg/h (máx 15)</td><td>Emergência hipertensiva</td><td>Bradicardia, hipotensão. Evitar em HFrEF</td></tr>
+                    <tr><td><strong>Nitroprussiato de sódio</strong></td><td>Doador de NO – vasodilatador arterial e venoso</td><td>0,3 mcg/kg/min; titular a cada 2 min até máx 10 mcg/kg/min</td><td>Emergência hipertensiva, edema agudo de pulmão, HFrEF (reduz pós‑carga)</td><td>Hipotensão, toxicidade por cianeto. Contraindicado em IR e insuficiência hepática</td></tr>
+                    <tr><td><strong>Nitroglicerina</strong></td><td>Doador de NO – vasodilatação venosa > arterial</td><td>Iniciar 0,25 mcg/kg/min, titular a cada 15 min (máx 10)</td><td>Angina refratária, edema agudo de pulmão, emergência hipertensiva</td><td>Hipotensão, cefaleia, palpitações. Contraindicado em insuficiência cardíaca direita grave e uso concomitante de inibidores da PDE‑5</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="badge-note">📌 A maioria das drogas possui protocolos institucionais e deve ser titulada com monitorização hemodinâmica contínua. Doses descritas são para adultos em ambiente de terapia intensiva. Consulte sempre a prescrição médica e as diretrizes locais.</div>
+    </div>
+</div>
+	
+	<!-- BOTÃO 4: VNI -->
     <button class="accordion-btn" data-target="content-vni"><span>💨 Ventilação Não Invasiva (VNI)</span><span class="btn-icon">▼</span></button>
     <div id="content-vni" class="accordion-content"><div class="content-inner"><div class="section-title">📌 Indicações e Contraindicações (VNI)</div><div class="table-wrapper"><table class="vital-table"><thead><th>Indicações principais</th><th>Contraindicações (VERMELHO = ABSOLUTAS)</th></tr></thead><tbody><tr><td>DPOC exacerbado com hipercapnia</td><td class="contra-indicacao">Parada cardiorrespiratória / instabilidade hemodinâmica</td></tr><tr><td>Edema agudo de pulmão cardiogênico</td><td class="contra-indicacao">Falência de via aérea / rebaixamento grave (Glasgow < 8)</td></tr><tr><td>Insuficiência respiratória hipercápnica</td><td class="contra-indicacao">Vômitos incoercíveis, sangramento GI ativo</td></tr><tr><td>Hipoxemia refratária em imunocomprometidos</td><td class="contra-indicacao">Deformidade facial / trauma craniofacial grave</td></tr><tr><td>Desmame de VM / pós-extubação</td><td class="contra-indicacao">Obstrução fixa de vias aéreas superiores</td></tr><tr><td></td><td class="contra-indicacao">Pneumotórax não drenado</td></tr></tbody></table></div><div class="section-title">⚙️ Parâmetros Iniciais (BIPAP/CPAP)</div><div class="table-wrapper"><table class="vital-table"><thead><th>Modo</th><th>Configuração sugerida</th><th>Ajustes</th></tr></thead><tbody><tr><td>EPAP/IPAP (BIPAP)</td><td>EPAP: 4-6 cmH₂O | IPAP: 8-12 cmH₂O</td><td>↑ gradiente pressão para ↑ VC</td></tr><tr><td>CPAP</td><td>5-10 cmH₂O (Edema agudo pulmonar)</td><td>Titular conforme SpO₂ >90%</td></tr><tr><td>FiO₂</td><td>Iniciar 40-60%</td><td>Ajustar para SpO₂ 88-92% (DPOC) ou >94% (outros)</td></tr><tr><td>Frequência de suporte</td><td>10-14 ipm (modo espontâneo/timed)</td><td>Evitar assincronia</td></tr></tbody></table></div><div class="section-title">📐 Calculadora HACOR (preditor de falência da VNI)</div><div class="calc-card"><div class="calc-row"><div class="calc-field"><label>FC (bpm)</label><input type="number" id="hacor_fc" value="95"></div><div class="calc-field"><label>pH</label><input type="number" id="hacor_ph" value="7.35" step="0.01"></div><div class="calc-field"><label>Glasgow (GCS)</label><input type="number" id="hacor_gcs" value="15"></div><div class="calc-field"><label>PaO₂/FiO₂</label><input type="number" id="hacor_pf" value="201"></div><div class="calc-field"><label>FR (irpm)</label><input type="number" id="hacor_fr" value="12"></div></div><button class="calc-btn" id="calcHacorBtn">Calcular escore HACOR</button><div id="hacorResult" class="result-value"></div></div><div class="badge-note">📊 Fonte: Roca O. et al. (2019). An Index Combining Respiratory Rate and Oxygenation to Predict Outcome of Nasal High-Flow Therapy. Am J Respir Crit Care Med.</div></div></div>
 
@@ -437,7 +638,213 @@
 
 	<!-- ... conteúdo anterior (Mobilização Precoce) ... -->
 
-<!-- BOTÃO 9: ELETROESTIMULAÇÃO FUNCIONAL -->
+<!-- BOTÃO: PROTOCOLO BRASILEIRO DE FISIOTERAPIA NO AVC -->
+<button class="accordion-btn" data-target="content-avc">
+    <span>🧠 Protocolo Brasileiro de Fisioterapia no AVC</span>
+    <span class="btn-icon">▼</span>
+</button>
+<div id="content-avc" class="accordion-content">
+    <div class="content-inner">
+        <div class="section-title">📌 Critérios de Segurança para Mobilização Precoce</div>
+        <div class="badge-note">📄 Fonte: Protocolo Brasileiro de Fisioterapia Precoce para Pacientes após AVC no Ambiente Hospitalar – Força Tarefa Brasil de Reabilitação do AVC (endossado pela ABN e ABRAFIN).</div>
+
+        <!-- Critérios Neurológicos -->
+        <div class="section-title">🧠 Considerações Neurológicas</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><th>Critério</th><th>Condição</th><th>Conduta</th></thead>
+                <tbody>
+                    <tr><td rowspan="3"><strong>Pressão intracraniana elevada</strong> <br> (suspeita ou confirmada)</td>
+                        <td>Com desvio da linha média ou rebaixamento do nível de consciência</td>
+                        <td class="contra-indicacao">⚠️ Contraindicação absoluta</td>
+                     </tr>
+                     <td>Com queixa de cefaleia intensa, náusea ou vômito em jato</td>
+                        <td class="contra-indicacao">⚠️ Contraindicação absoluta</td>
+                     </tr>
+                     <td>Assintomático, sem desvio de linha média, em uso de medicação</td>
+                        <td>Contraindicação relativa – avaliar caso a caso</td>
+                     </tr>
+                    <tr><td rowspan="3"><strong>Convulsão</strong></td>
+                        <td>Pós-ictal imediato (até 30 min)</td>
+                        <td class="contra-indicacao">⚠️ Contraindicação absoluta</td>
+                     </tr>
+                     <td>Pós-ictal (após 30 min)</td>
+                        <td>Contraindicação relativa – mobilizar com cautela</td>
+                     </tr>
+                     <td>Controle adequado com anticonvulsivantes, sem sequelas</td>
+                        <td>Permitido</td>
+                     </tr>
+                    <tr><td rowspan="2"><strong>Déficits neurológicos flutuantes ou progressivos</strong></td>
+                        <td>Piora ≥ 2 pontos no NIHSS</td>
+                        <td class="contra-indicacao">⚠️ Contraindicação absoluta – investigar causa</td>
+                     </tr>
+                     <td>NIHSS estável ou melhorando</td>
+                        <td>Permitido</td>
+                     </tr>
+                    <tr><td rowspan="2"><strong>Queixa de tontura, náusea ou vômito</strong></td>
+                        <td>Nas primeiras 24-48h do ictus</td>
+                        <td class="contra-indicacao">⚠️ Contraindicação absoluta (risco de deterioração)</td>
+                     </tr>
+                     <td>Após 48h, sem piora neurológica</td>
+                        <td>Contraindicação relativa – mobilizar com cautela</td>
+                     </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Critérios Cardiovasculares -->
+        <div class="section-title">❤️ Considerações Cardiovasculares</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><th>Critério</th><th>Condição</th><th>Conduta</th></thead>
+                <tbody>
+                    <tr><td rowspan="2"><strong>Pressão arterial (PA)</strong></td>
+                        <td>PAS < 90 mmHg ou > 220 mmHg<br>PAD > 120 mmHg</td>
+                        <td class="contra-indicacao">⚠️ Contraindicação absoluta</td>
+                     </tr>
+                     <td>PAS 90-220 mmHg, PAD ≤ 120 mmHg</td>
+                        <td>Permitido (monitorar sinais de hipoperfusão)</td>
+                     </tr>
+                    <tr><td rowspan="2"><strong>Frequência cardíaca (FC)</strong></td>
+                        <td>FC < 40 ou > 120 bpm</td>
+                        <td class="contra-indicacao">⚠️ Contraindicação absoluta</td>
+                     </tr>
+                     <td>FC 40-120 bpm</td>
+                        <td>Permitido</td>
+                     </tr>
+                    <tr><td><strong>Arritmias cardíacas instáveis</strong></td>
+                        <td>FA com resposta ventricular rápida não controlada, TV, etc.</td>
+                        <td class="contra-indicacao">⚠️ Contraindicação absoluta</td>
+                     </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Critérios Respiratórios -->
+        <div class="section-title">🫁 Considerações Respiratórias e Outras</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><th>Critério</th><th>Condição</th><th>Conduta</th></thead>
+                <tbody>
+                    <tr><td><strong>Saturação periférica (SpO₂)</strong></td>
+                        <td>SpO₂ < 90% (ou < 88% para DPOC)</td>
+                        <td class="contra-indicacao">⚠️ Contraindicação absoluta</td>
+                     </tr>
+                    <tr><td><strong>Frequência respiratória (FR)</strong></td>
+                        <td>FR > 30 ipm</td>
+                        <td class="contra-indicacao">⚠️ Contraindicação absoluta</td>
+                     </tr>
+                    <tr><td><strong>Temperatura</strong></td>
+                        <td>Temperatura > 38,5°C</td>
+                        <td class="contra-indicacao">⚠️ Contraindicação absoluta</td>
+                     </tr>
+                     <td><strong>Hemorragia ativa / risco de sangramento</strong></td>
+                        <td>Nas primeiras 24h pós-trombólise, acesso femoral recente</td>
+                        <td class="contra-indicacao">⚠️ Contraindicação absoluta</td>
+                     </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Calculadora NIHSS -->
+        <div class="section-title">📊 Calculadora do NIHSS (National Institutes of Health Stroke Scale)</div>
+        <div class="badge-note">⚠️ A NIHSS avalia a gravidade do AVC. Pontuação: 0-4 (leve), 5-15 (moderado), 16-20 (moderadamente grave), 21-42 (grave). Aplicar diariamente durante a internação.</div>
+        <div class="calc-card">
+            <div class="calc-row">
+                <div class="calc-field"><label>1a. Nível de consciência</label><select id="nihss_1a"><option value="0">0 – Alerta</option><option value="3">1 – Sonolento (responde mínimo)</option><option value="2">2 – Estupor (responde com estímulo repetido)</option><option value="3">3 – Coma</option></select></div>
+                <div class="calc-field"><label>1b. Perguntas (mês/idade)</label><select id="nihss_1b"><option value="0">0 – Acerta ambas</option><option value="1">1 – Acerta uma</option><option value="2">2 – Nenhuma</option></select></div>
+                <div class="calc-field"><label>1c. Comandos (abrir/fechar olhos, apertar mão)</label><select id="nihss_1c"><option value="0">0 – Executa ambos</option><option value="1">1 – Executa um</option><option value="2">2 – Nenhum</option></select></div>
+            </div>
+            <div class="calc-row">
+                <div class="calc-field"><label>2. Olhar conjugado</label><select id="nihss_2"><option value="0">0 – Normal</option><option value="1">1 – Paralisia parcial</option><option value="2">2 – Desvio forçado</option></select></div>
+                <div class="calc-field"><label>3. Campos visuais</label><select id="nihss_3"><option value="0">0 – Normal</option><option value="1">1 – Hemianopsia parcial</option><option value="2">2 – Hemianopsia completa</option><option value="3">3 – Cegueira bilateral</option></select></div>
+                <div class="calc-field"><label>4. Paralisia facial</label><select id="nihss_4"><option value="0">0 – Normal</option><option value="1">1 – Leve</option><option value="2">2 – Parcial</option><option value="3">3 – Completa</option></select></div>
+            </div>
+            <div class="calc-row">
+                <div class="calc-field"><label>5a. MS esquerdo</label><select id="nihss_5a"><option value="0">0 – Sem queda</option><option value="1">1 – Queda ao elevar</option><option value="2">2 – Esforço contra gravidade</option><option value="3">3 – Sem esforço contra gravidade</option><option value="4">4 – Sem movimento</option></select></div>
+                <div class="calc-field"><label>5b. MS direito</label><select id="nihss_5b"><option value="0">0 – Sem queda</option><option value="1">1 – Queda ao elevar</option><option value="2">2 – Esforço contra gravidade</option><option value="3">3 – Sem esforço contra gravidade</option><option value="4">4 – Sem movimento</option></select></div>
+                <div class="calc-field"><label>6a. MI esquerdo</label><select id="nihss_6a"><option value="0">0 – Sem queda</option><option value="1">1 – Queda ao elevar</option><option value="2">2 – Esforço contra gravidade</option><option value="3">3 – Sem esforço contra gravidade</option><option value="4">4 – Sem movimento</option></select></div>
+                <div class="calc-field"><label>6b. MI direito</label><select id="nihss_6b"><option value="0">0 – Sem queda</option><option value="1">1 – Queda ao elevar</option><option value="2">2 – Esforço contra gravidade</option><option value="3">3 – Sem esforço contra gravidade</option><option value="4">4 – Sem movimento</option></select></div>
+            </div>
+            <div class="calc-row">
+                <div class="calc-field"><label>7. Ataxia de membros</label><select id="nihss_7"><option value="0">0 – Ausente</option><option value="1">1 – Presente em um membro</option><option value="2">2 – Presente em dois membros</option></select></div>
+                <div class="calc-field"><label>8. Sensibilidade</label><select id="nihss_8"><option value="0">0 – Normal</option><option value="1">1 – Leve a moderada</option><option value="2">2 – Grave</option></select></div>
+                <div class="calc-field"><label>9. Linguagem</label><select id="nihss_9"><option value="0">0 – Normal</option><option value="1">1 – Afasia leve-moderada</option><option value="2">2 – Afasia grave</option><option value="3">3 – Mutismo</option></select></div>
+            </div>
+            <div class="calc-row">
+                <div class="calc-field"><label>10. Disartria</label><select id="nihss_10"><option value="0">0 – Normal</option><option value="1">1 – Leve a moderada</option><option value="2">2 – Grave</option></select></div>
+                <div class="calc-field"><label>11. Extinção / Negligência</label><select id="nihss_11"><option value="0">0 – Normal</option><option value="1">1 – Extinção leve</option><option value="2">2 – Extinção grave</option></select></div>
+            </div>
+            <button class="calc-btn" id="calcNihssBtn">Calcular NIHSS</button>
+            <div id="nihssResult" class="result-value">Pontuação NIHSS: --</div>
+            <div id="nihssInterpretation" class="abg-analysis" style="margin-top: 8px;"></div>
+        </div>
+
+        <!-- Fluxograma de Mobilização -->
+        <div class="section-title">📋 Fluxograma de Mobilização (fase hiperaguda e aguda)</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><th>Gravidade (NIHSS)</th><th>Quando começar</th><th>Duração da sessão</th><th>Frequência</th><th>Intensidade</th></thead>
+                <tbody>
+                    <tr><td><strong>Leve (0-7)</strong></td>
+                        <td>Após 24h do ictus<br>Pode ir ao banheiro nas primeiras 24h se deambula independente</td>
+                        <td>10-15 min</td>
+                        <td>2-4x/dia</td>
+                        <td>Moderada (Borg 10-13)</td>
+                     </tr>
+                    <tr><td><strong>Moderado (8-15)</strong></td>
+                        <td>Entre 24-48h do ictus, após estabilização clínica</td>
+                        <td>10 min</td>
+                        <td>2-3x/dia</td>
+                        <td>Leve a moderada (Borg 6-10)</td>
+                     </tr>
+                    <tr><td><strong>Moderadamente grave (16-20)</strong></td>
+                        <td>Entre 24-48h, com cautela redobrada</td>
+                        <td>≤ 10 min</td>
+                        <td>2x/dia</td>
+                        <td>Baixa (Borg ≤ 10)</td>
+                     </tr>
+                    <tr><td><strong>Grave (21-42)</strong></td>
+                        <td>Entre 24-48h, priorizar estabilização; iniciar com exercícios leves no leito</td>
+                        <td>5-10 min</td>
+                        <td>1-2x/dia</td>
+                        <td>Baixa (Borg 6-8)</td>
+                     </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="badge-note">📌 <strong>Observações importantes:</strong> 
+            <ul style="margin-left: 20px; margin-top: 8px;">
+                <li><strong>Não mobilizar</strong> nas primeiras 24h em pacientes com NIHSS > 7 (exceto deambuladores independentes).</li>
+                <li><strong>Pacientes submetidos à trombólise ou trombectomia:</strong> aguardar tomografia de controle e liberação médica (risco de transformação hemorrágica).</li>
+                <li><strong>Pacientes com trombectomia via femoral:</strong> aguardar 6h após remoção da bainha ou curativo compressivo.</li>
+                <li><strong>Suspender a mobilização</strong> se: FC > 120 bpm sustentada, SpO₂ < 90%, queixa de dor torácica, tontura intensa, náusea, vômito, ou piora do nível de consciência.</li>
+                <li><strong>Exercícios leves no leito</strong> (Borg 6-10): paciente fala durante o exercício, sem alteração significativa da FC e FR.</li>
+            </ul>
+        </div>
+
+        <!-- Instrumentos de avaliação recomendados -->
+        <div class="section-title">📋 Instrumentos de Avaliação Altamente Recomendados</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead><th>Instrumento</th><th>Objetivo</th><th>Quando aplicar</th></thead>
+                <tbody>
+                    <tr><td><strong>NIHSS</strong></td><td>Gravidade do AVC</td><td>Diariamente</td></tr>
+                    <tr><td><strong>Escala de Rankin modificada (ERm)</strong></td><td>Independência funcional global</td><td>Admissão (prévio ao AVC) e alta hospitalar</td></tr>
+                    <tr><td><strong>Escala de Mobilidade Hospitalar (EMH)</strong></td><td>Nível de mobilidade</td><td>Diariamente</td></tr>
+                    <tr><td><strong>Teste de Caminhada de 10 metros</strong></td><td>Velocidade da marcha</td><td>Quando começar a andar e na alta</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="badge-note">📌 <strong>Links úteis:</strong><br>
+            - Treinamento online gratuito para reabilitação em AVC: <a href="https://avc.encontrodigital.com.br/" target="_blank">https://avc.encontrodigital.com.br/</a><br>
+            - Certificação NIHSS e ERm: <a href="https://secure.bluecloud.net" target="_blank">https://secure.bluecloud.net</a><br>
+            - Associação Brasil AVC (manuais e vídeos): <a href="http://abavc.org.br/" target="_blank">http://abavc.org.br/</a>
+        </div>
+    </div>
+</div>
+	
+	<!-- BOTÃO 9: ELETROESTIMULAÇÃO FUNCIONAL -->
 <button class="accordion-btn" data-target="content-nmes">
     <span>⚡ Eletroestimulação Funcional – Parâmetros (NMES)</span>
     <span class="btn-icon">▼</span>
@@ -575,9 +982,12 @@
         <li><strong>LIMA, L.O.; SANTOS, M.S.; SOARES, A.F.; et al.</strong> Safety criteria to start early mobilization in intensive care units. Systematic review. <em>Revista Brasileira de Terapia Intensiva</em>, v. 29, n. 4, p. 509–519, 2017. doi: <a class="ref-link" href="https://doi.org/10.5935/0103-507X.20170076" target="_blank">10.5935/0103-507X.20170076</a>. PMID: 29319774; PMCID: PMC5764564.</li>
         <li><strong>HOUSTON, J.L.; BOYD, K.; CAVALHERI, V.; et al.</strong> What are safe hemoglobin, neutrophil and platelet counts for people with hematological malignancies to participate in exercise and activities of daily living: a scoping review. <em>Supportive Care in Cancer</em>, v. 33, n. 7, p. 605, 2025. doi: <a class="ref-link" href="https://doi.org/10.1007/s00520-025-09612-5" target="_blank">10.1007/s00520-025-09612-5</a>. PMID: 39939449; PMCID: PMC12182480.</li>
     	<li><strong>PAPADOPOULOS, M.; PATSAKI, I.; CHRISTAKOU, A.; GEROVASILI, V.; NANAS, S.</strong> Therapeutic Applications of Neuromuscular Electrical Stimulation in Critical Care Patients. <em>Hospital Chronicles</em>, v. 8, n. 3, p. 112–119, 2013. Disponível em: <a class="ref-link" href="https://scispace.com/pdf/therapeutic-applications-of-neuromuscular-electrical-1zxwl6uu6o.pdf" target="_blank">https://scispace.com/pdf/therapeutic-applications-of-neuromuscular-electrical-1zxwl6uu6o.pdf</a>. Acesso em: 27 mar. 2026.</li>
- 	<li><strong>BANERJEE, G.; JOHNSON, M. I.</strong> Transcutaneous electrical nerve stimulation (TENS): A potential intervention for pain management in India? <em>Indian Journal of Pain</em>, v. 27, n. 3, p. 132–141, 2013. doi: <a class="ref-link" href="https://doi.org/10.4103/0970-5333.124590" target="_blank">10.4103/0970-5333.124590</a>. Disponível em: <a class="ref-link" href="https://www.ovid.com/jnls/ijpn/fulltext/10.4103/0970-5333.124590~transcutaneous-electrical-nerve-stimulation-tens-a-potential" target="_blank">Link direto</a>. Acesso em: 27 mar. 2026.</li>
-	<li><strong>PAPADOPOULOS, M.; PATSAKI, I.; CHRISTAKOU, A.; GEROVASILI, V.; NANAS, S.</strong> Therapeutic Applications of Neuromuscular Electrical Stimulation in Critical Care Patients. <em>Hospital Chronicles</em>, v. 8, n. 3, p. 112–119, 2013. Disponível em: <a class="ref-link" href="https://scispace.com/pdf/therapeutic-applications-of-neuromuscular-electrical-1zxwl6uu6o.pdf" target="_blank">https://scispace.com/pdf/therapeutic-applications-of-neuromuscular-electrical-1zxwl6uu6o.pdf</a>. Acesso em: 27 mar. 2026.</li>	
-   </ul><div class="badge-note">🔗 Todas as referências foram validadas com links de acesso direto e/ou DOI.</div></div></div>
+ 		<li><strong>BANERJEE, G.; JOHNSON, M. I.</strong> Transcutaneous electrical nerve stimulation (TENS): A potential intervention for pain management in India? <em>Indian Journal of Pain</em>, v. 27, n. 3, p. 132–141, 2013. doi: <a class="ref-link" href="https://doi.org/10.4103/0970-5333.124590" target="_blank">10.4103/0970-5333.124590</a>. Disponível em: <a class="ref-link" href="https://www.ovid.com/jnls/ijpn/fulltext/10.4103/0970-5333.124590~transcutaneous-electrical-nerve-stimulation-tens-a-potential" target="_blank">Link direto</a>. Acesso em: 27 mar. 2026.</li>
+		<li><strong>PAPADOPOULOS, M.; PATSAKI, I.; CHRISTAKOU, A.; GEROVASILI, V.; NANAS, S.</strong> Therapeutic Applications of Neuromuscular Electrical Stimulation in Critical Care Patients. <em>Hospital Chronicles</em>, v. 8, n. 3, p. 112–119, 2013. Disponível em: <a class="ref-link" href="https://scispace.com/pdf/therapeutic-applications-of-neuromuscular-electrical-1zxwl6uu6o.pdf" target="_blank">https://scispace.com/pdf/therapeutic-applications-of-neuromuscular-electrical-1zxwl6uu6o.pdf</a>. Acesso em: 27 mar. 2026.</li>	
+		<li><strong>BARNEY, P.</strong> MICU/CCU Drips. In: <em>VIM Book – Vanderbilt Internal Medicine</em>, 2025. Disponível em: <a class="ref-link" href="https://vim-book.org/critical-care/critical-care-drips/" target="_blank">https://vim-book.org/critical-care/critical-care-drips/</a>. Acesso em: 27 mar. 2026.</li>
+		<li><strong>PLATER, J. C.; BAXTER, G. D.; WOOD, L. C.; MUELLER, J.; FISHER, T.</strong> Development of evidence-based standards for inpatient physiotherapy services: a systematic review and content analysis of clinical practice guidelines. <em>BMJ Open</em>, v. 14, n. 12, p. e088692, 2024. doi: <a class="ref-link" href="https://doi.org/10.1136/bmjopen-2024-088692" target="_blank">10.1136/bmjopen-2024-088692</a>. Disponível em: <a class="ref-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11667250/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC11667250/</a>. Acesso em: 28 mar. 2026.</li>
+		<li><strong>MASO, I.; LUVIZUTTO, G. J.; MIRANDA, J. M. A.; NASCIMENTO, C. F.; BONOME, L. A. M.; PINTO, E. B.; KLITZKE, F. M.; SOUZA, R. M.; MORO, C. H. C.; BAZAN, R.; JESUS, P. A. P.; ROCHA, E. M. C.; MINELLI, C.; MARTINS, S. O.; BAGGIO, J. A. O.</strong> Protocolo Brasileiro de Fisioterapia Precoce para Pacientes após AVC no Ambiente Hospitalar: Consenso de Especialistas da Força Tarefa Brasil de Reabilitação do AVC. <em>Arquivos de Neuro-Psiquiatria</em>, 2025. Endossado pela Academia Brasileira de Neurologia (ABN) e Associação Brasileira de Fisioterapia Neurofuncional (ABRAFIN). Material suplementar. Disponível em: <a class="ref-link" href="https://www.arquivosdeneuropsiquiatria.org/wp-content/uploads/2025/02/ANP-2024.0096-Supplementary-Material-2.pdf" target="_blank">https://www.arquivosdeneuropsiquiatria.org/wp-content/uploads/2025/02/ANP-2024.0096-Supplementary-Material-2.pdf</a>. Acesso em: 28 mar. 2026.</li>
+	</ul><div class="badge-note">🔗 Todas as referências foram validadas com links de acesso direto e/ou DOI.</div></div></div>
 
     <div class="footnote">🏥 App para fisioterapeutas e estagiários HUSE | Baseado em evidências e diretrizes oficiais | Desenvolvido pela Equipe de Fisioterapia do HUSE.</div>
 </div>
@@ -700,7 +1110,54 @@
         document.getElementById('calcAbgBtn')?.addEventListener('click', interpretarABG);
         interpretarABG();
 
-        // ROX
+		// CALCULADORA NIHSS
+function calcularNIHSS() {
+    const itens = ['1a', '1b', '1c', '2', '3', '4', '5a', '5b', '6a', '6b', '7', '8', '9', '10', '11'];
+    let total = 0;
+    for (let i = 0; i < itens.length; i++) {
+        const val = parseInt(document.getElementById(`nihss_${itens[i]}`).value);
+        if (!isNaN(val)) total += val;
+    }
+    let classificacao = '';
+    if (total <= 4) classificacao = '✅ Leve';
+    else if (total <= 15) classificacao = '⚠️ Moderado';
+    else if (total <= 20) classificacao = '🔴 Moderadamente grave';
+    else classificacao = '🔴🔴 Grave';
+    document.getElementById('nihssResult').innerHTML = `Pontuação NIHSS: ${total} — ${classificacao}`;
+    document.getElementById('nihssInterpretation').innerHTML = `<strong>Interpretação:</strong> ${classificacao}. ${total >= 16 ? 'Mobilização com cautela redobrada, duração ≤ 10 minutos.' : 'Seguir fluxograma conforme gravidade.'}`;
+}
+document.getElementById('calcNihssBtn')?.addEventListener('click', calcularNIHSS);
+calcularNIHSS();
+       
+		
+		// PESQUISA DINÂMICA
+const searchInput = document.getElementById('searchInput');
+const allButtons = document.querySelectorAll('.accordion-btn');
+
+function filterButtons() {
+     // Fecha todos os conteúdos abertos para evitar confusão
+    closeAllContents();  // esta função já existe no seu código
+	const term = searchInput.value.toLowerCase().trim();
+    let anyVisible = false;
+    allButtons.forEach(btn => {
+        const text = btn.textContent.toLowerCase();
+        if (term === '' || text.includes(term)) {
+            btn.style.display = 'flex';   // mostra
+            anyVisible = true;
+        } else {
+            btn.style.display = 'none';   // esconde
+        }
+    });
+    // Opcional: aviso se nenhum botão corresponder
+    const noResultsMsg = document.getElementById('noResults');
+    if (noResultsMsg) {
+        noResultsMsg.style.display = anyVisible ? 'none' : 'block';
+    }
+}
+
+searchInput.addEventListener('input', filterButtons);
+		
+		// ROX
         function calcularROX() {
             let spo2 = parseFloat(document.getElementById('rox_spo2').value);
             let fio2_percent = parseFloat(document.getElementById('rox_fio2').value);
