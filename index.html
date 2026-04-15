@@ -654,7 +654,99 @@
     <button class="accordion-btn" data-target="content-abg"><span>🩸 Gasometria Arterial (GSA)</span><span class="btn-icon">▼</span></button>
     <div id="content-abg" class="accordion-content"><div class="content-inner"><div class="section-title">📋 Valores de Referência (Cleveland Clinic)</div><div class="table-wrapper"><table class="vital-table"><thead><th>Parâmetro</th><th>Valor Normal</th><th>Unidade</th></tr></thead><tbody><tr><td>pH</td><td>7,35 – 7,45</td><td>-</td></tr><tr><td>PaO₂</td><td>75 – 100</td><td>mmHg</td></tr><tr><td>PaCO₂</td><td>35 – 45</td><td>mmHg</td></tr><tr><td>HCO₃⁻</td><td>22 – 26</td><td>mEq/L</td></tr></tbody></table></div><div class="section-title">🔍 Análise Rápida da Gasometria</div><div class="calc-card"><div class="calc-row"><div class="calc-field"><label>pH</label><input type="number" id="abg_ph" value="7.40" step="0.01"></div><div class="calc-field"><label>PaCO₂ (mmHg)</label><input type="number" id="abg_paco2" value="40"></div><div class="calc-field"><label>HCO₃⁻ (mEq/L)</label><input type="number" id="abg_hco3" value="24"></div><div class="calc-field"><label>PaO₂ (mmHg)</label><input type="number" id="abg_pao2" value="85"></div></div><button class="calc-btn" id="calcAbgBtn">Interpretar Gasometria</button><div id="abgResult" class="result-value"></div><div id="abgDetailed" class="abg-analysis"></div></div><div class="badge-note">📌 Fonte: <a href="https://my.clevelandclinic.org/health/diagnostics/22409-arterial-blood-gas-abg" target="_blank">Cleveland Clinic – Arterial Blood Gas</a></div></div></div>
 
-    <!-- BOTÃO 8: Mobilização Precoce (COM CRITÉRIOS HEMATOLÓGICOS) -->
+   <!-- BOTÃO: ESCALA 4AT (RASTREIO DE DELIRIUM) -->
+<button class="accordion-btn" data-target="content-4at">
+    <span>🧠 Escala 4AT – Rastreio Rápido de Delirium</span>
+    <span class="btn-icon">▼</span>
+</button>
+<div id="content-4at" class="accordion-content">
+    <div class="content-inner">
+        <div class="section-title">📌 Sobre o 4AT</div>
+        <div class="badge-note">📄 O 4AT (4 A's Test) é um instrumento de rastreio rápido para delirium e comprometimento cognitivo, desenvolvido por MacLullich et al. (2011). É recomendado por múltiplas diretrizes internacionais e utilizado como ferramenta padrão em vários países. Leva cerca de 2 minutos para ser aplicado e não requer treinamento especial.[reference:0][reference:1]</div>
+
+        <!-- Tabela da Escala -->
+        <div class="section-title">📋 Itens da Escala e Pontuação</div>
+        <div class="table-wrapper">
+            <table class="vital-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Avaliação</th>
+                        <th>Resposta</th>
+                        <th>Pontos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Item 1: Nível de Alerta -->
+                    <tr id="4at-item1-row">
+                        <td rowspan="3"><strong>1. Nível de Alerta</strong><br><span style="font-size:0.7rem;">Observe o paciente. Se dormindo, tente acordar com fala/toque suave no ombro. Peça para dizer nome e endereço.</span></td>
+                        <td colspan="2">Normal (totalmente alerta, sem agitação, durante toda avaliação)</td>
+                        <td style="text-align:center"><input type="radio" name="alertness" value="0" checked> 0</td>
+                    </tr>
+                    <tr id="4at-item1-row">
+                        <td colspan="2">Sonolência leve por < 10 segundos após acordar, depois normal</td>
+                        <td style="text-align:center"><input type="radio" name="alertness" value="0"> 0</td>
+                    </tr>
+                    <tr id="4at-item1-row">
+                        <td colspan="2">Claramente anormal (sonolência acentuada, agitação, hiperatividade)</td>
+                        <td style="text-align:center"><input type="radio" name="alertness" value="4"> 4</td>
+                    </tr>
+                    <!-- Item 2: AMT4 -->
+                    <tr id="4at-item2-row">
+                        <td rowspan="3"><strong>2. AMT4</strong><br><span style="font-size:0.7rem;">Perguntar: idade, data de nascimento, local (nome do hospital/edifício), ano atual.</span></td>
+                        <td colspan="2">Sem erros</td>
+                        <td style="text-align:center"><input type="radio" name="amt4" value="0" checked> 0</td>
+                    </tr>
+                    <tr id="4at-item2-row">
+                        <td colspan="2">1 erro</td>
+                        <td style="text-align:center"><input type="radio" name="amt4" value="1"> 1</td>
+                    </tr>
+                    <tr id="4at-item2-row">
+                        <td colspan="2">2 ou mais erros / impossível avaliar</td>
+                        <td style="text-align:center"><input type="radio" name="amt4" value="2"> 2</td>
+                    </tr>
+                    <!-- Item 3: Atenção -->
+                    <tr id="4at-item3-row">
+                        <td rowspan="3"><strong>3. Atenção</strong><br><span style="font-size:0.7rem;">"Diga os meses do ano de trás para frente, a partir de dezembro." (permitida uma ajuda inicial).</span></td>
+                        <td colspan="2">Acerta 7 meses ou mais</td>
+                        <td style="text-align:center"><input type="radio" name="attention" value="0" checked> 0</td>
+                    </tr>
+                    <tr id="4at-item3-row">
+                        <td colspan="2">Começa mas acerta < 7 meses / recusa a começar</td>
+                        <td style="text-align:center"><input type="radio" name="attention" value="1"> 1</td>
+                    </tr>
+                    <tr id="4at-item3-row">
+                        <td colspan="2">Impossível avaliar (sonolento, desatento, não consegue começar)</td>
+                        <td style="text-align:center"><input type="radio" name="attention" value="2"> 2</td>
+                    </tr>
+                    <!-- Item 4: Mudança Aguda ou Curso Flutuante -->
+                    <tr id="4at-item4-row">
+                        <td rowspan="2"><strong>4. Mudança Aguda ou Curso Flutuante</strong><br><span style="font-size:0.7rem;">Evidência de mudança significativa ou flutuação no nível de alerta, cognição ou outra função mental (ex.: paranoia, alucinações) surgida nas últimas 2 semanas e ainda evidente nas últimas 24h. Requer informações de familiares, equipe ou prontuário.</span></td>
+                        <td colspan="2">Não</td>
+                        <td style="text-align:center"><input type="radio" name="acuteChange" value="0" checked> 0</td>
+                    </tr>
+                    <tr id="4at-item4-row">
+                        <td colspan="2">Sim</td>
+                        <td style="text-align:center"><input type="radio" name="acuteChange" value="4"> 4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Botão Calcular -->
+        <div style="display: flex; justify-content: center; margin: 20px 0;">
+            <button class="calc-btn" id="calc4ATBtn" style="background: #0088cc; color: white; border: none; border-radius: 32px; padding: 10px 24px; font-weight: 600; cursor: pointer;">✅ Calcular Pontuação 4AT</button>
+        </div>
+
+        <!-- Resultados -->
+        <div id="at4Result" class="result-value" style="margin-top: 10px;"></div>
+        <div id="at4Interpretation" class="abg-analysis" style="margin-top: 8px;"></div>
+
+        <div class="badge-note">📌 <strong>Interpretação padrão:</strong> Pontuação <strong>≥ 4</strong> sugere possível delirium (+/- comprometimento cognitivo). Pontuação <strong>1 a 3</strong> sugere possível comprometimento cognitivo. Pontuação <strong>0</strong> indica que delirium ou comprometimento cognitivo grave são improváveis (mas delirium ainda possível se o item 4 não pôde ser adequadamente avaliado).[reference:2][reference:3]</div>
+    </div>
+</div>
+	
+	<!-- BOTÃO 8: Mobilização Precoce (COM CRITÉRIOS HEMATOLÓGICOS) -->
     <button class="accordion-btn" data-target="content-mobilizacao"><span>🚶‍♂️ Mobilização Precoce – Critérios de Segurança</span><span class="btn-icon">▼</span></button>
     <div id="content-mobilizacao" class="accordion-content">
         <div class="content-inner">
@@ -1176,6 +1268,8 @@
 		<li><strong>PLATER, J. C.; BAXTER, G. D.; WOOD, L. C.; MUELLER, J.; FISHER, T.</strong> Development of evidence-based standards for inpatient physiotherapy services: a systematic review and content analysis of clinical practice guidelines. <em>BMJ Open</em>, v. 14, n. 12, p. e088692, 2024. doi: <a class="ref-link" href="https://doi.org/10.1136/bmjopen-2024-088692" target="_blank">10.1136/bmjopen-2024-088692</a>. Disponível em: <a class="ref-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11667250/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC11667250/</a>. Acesso em: 28 mar. 2026.</li>
 		<li><strong>MASO, I.; LUVIZUTTO, G. J.; MIRANDA, J. M. A.; NASCIMENTO, C. F.; BONOME, L. A. M.; PINTO, E. B.; KLITZKE, F. M.; SOUZA, R. M.; MORO, C. H. C.; BAZAN, R.; JESUS, P. A. P.; ROCHA, E. M. C.; MINELLI, C.; MARTINS, S. O.; BAGGIO, J. A. O.</strong> Protocolo Brasileiro de Fisioterapia Precoce para Pacientes após AVC no Ambiente Hospitalar: Consenso de Especialistas da Força Tarefa Brasil de Reabilitação do AVC. <em>Arquivos de Neuro-Psiquiatria</em>, 2025. Endossado pela Academia Brasileira de Neurologia (ABN) e Associação Brasileira de Fisioterapia Neurofuncional (ABRAFIN). Material suplementar. Disponível em: <a class="ref-link" href="https://www.arquivosdeneuropsiquiatria.org/wp-content/uploads/2025/02/ANP-2024.0096-Supplementary-Material-2.pdf" target="_blank">https://www.arquivosdeneuropsiquiatria.org/wp-content/uploads/2025/02/ANP-2024.0096-Supplementary-Material-2.pdf</a>. Acesso em: 28 mar. 2026.</li>
 		<li><strong>BRIGHAM AND WOMEN'S HOSPITAL, Department of Rehabilitation Services.</strong> Standard of Care: Cardiac – Inpatient Physical Therapy Management of the Surgical and Non‑Surgical Patient with Cardiac Disease. Boston, 2019. Disponível em: <a class="ref-link" href="https://www.brighamandwomens.org/assets/bwh/patients-and-families/rehabilitation-services/pdfs/cardiac-soc-bwh.pdf" target="_blank">https://www.brighamandwomens.org/assets/bwh/patients-and-families/rehabilitation-services/pdfs/cardiac-soc-bwh.pdf</a>. Acesso em: 28 mar. 2026.</li>
+		<li><strong>MACLULLICH, A. M. J.; RYAN, T.; CASH, H.</strong> 4AT: Rapid Clinical Test for Delirium (Versão 1.2). Edinburgh Delirium Research Group, University of Edinburgh, 2014. Disponível em: <a class="ref-link" href="https://www.the4at.com/" target="_blank">https://www.the4at.com/</a>. Acesso em: 15 abr. 2026.</li>
+        <li><strong>RITTERA, S. R. F.; et al.</strong> The 4AT scale for rapid detection of delirium in emergency department triage. <em>Frontiers in Medicine</em>, v. 11, p. 1345983, 2024. doi: <a class="ref-link" href="https://doi.org/10.3389/fmed.2024.1345983" target="_blank">10.3389/fmed.2024.1345983</a>. Disponível em: <a class="ref-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11130506/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC11130506/</a>. Acesso em: 15 abr. 2026.</li>
 	</ul><div class="badge-note">🔗 Todas as referências foram validadas com links de acesso direto e/ou DOI.</div></div></div>
 
     <div class="footnote">🏥 App para fisioterapeutas e estagiários | Baseado em evidências e diretrizes oficiais | Desenvolvido pela Equipe de Fisioterapia do HUSE.</div>
@@ -1335,6 +1429,33 @@ function calcularNIHSS() {
 document.getElementById('calcNihssBtn')?.addEventListener('click', calcularNIHSS);
 calcularNIHSS();
        
+// CALCULADORA 4AT
+function calcular4AT() {
+    // Obtém os valores dos radio buttons
+    const alertness = parseFloat(document.querySelector('input[name="alertness"]:checked')?.value) || 0;
+    const amt4 = parseFloat(document.querySelector('input[name="amt4"]:checked')?.value) || 0;
+    const attention = parseFloat(document.querySelector('input[name="attention"]:checked')?.value) || 0;
+    const acuteChange = parseFloat(document.querySelector('input[name="acuteChange"]:checked')?.value) || 0;
+
+    const total = alertness + amt4 + attention + acuteChange;
+
+    let interpretacao = '';
+    if (total >= 4) {
+        interpretacao = '⚠️ <strong>Pontuação ≥ 4:</strong> Possível delirium (+/- comprometimento cognitivo). Recomenda-se avaliação diagnóstica mais detalhada.';
+    } else if (total >= 1 && total <= 3) {
+        interpretacao = '📌 <strong>Pontuação 1 a 3:</strong> Possível comprometimento cognitivo. Testes cognitivos mais detalhados e informações adicionais são necessários.';
+    } else {
+        interpretacao = '✅ <strong>Pontuação 0:</strong> Delirium ou comprometimento cognitivo grave são improváveis. No entanto, se o item 4 não pôde ser adequadamente avaliado, o delirium ainda é possível.';
+    }
+
+    document.getElementById('at4Result').innerHTML = `Pontuação 4AT: ${total} pontos`;
+    document.getElementById('at4Interpretation').innerHTML = interpretacao;
+}
+
+// Adiciona o evento de clique ao botão
+document.getElementById('calc4ATBtn')?.addEventListener('click', calcular4AT);
+calcular4AT(); // Executa uma vez ao carregar a página para mostrar o estado inicial
+
 		
 		// PESQUISA DINÂMICA
 const searchInput = document.getElementById('searchInput');
